@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+rst/dist/
+dist/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Editor
+.DS_Store
+.vscode/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Type cache
+*.tsbuildinfo

@@ -1,0 +1,618 @@
+/* 
+ * NeoTechnology Solutions - Responsive CSS
+ * Performance-optimized responsive design system
+ * Mobile-first approach with progressive enhancement
+ */
+
+/* ================================================
+   RESPONSIVE BREAKPOINTS & UTILITIES
+   ================================================ */
+
+/* CSS Custom Properties for Responsive Design */
+:root {
+  --container-padding: clamp(1rem, 4vw, 2rem);
+  --section-padding: clamp(2rem, 8vh, 6rem);
+  --card-padding: clamp(1rem, 3vw, 2rem);
+  --grid-gap: clamp(1rem, 4vw, 2rem);
+  --border-radius: clamp(0.5rem, 2vw, 1rem);
+  
+  /* Fluid Typography Scale */
+  --text-xs: clamp(0.75rem, 2vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 2.5vw, 1rem);
+  --text-base: clamp(1rem, 3vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 3.5vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 4vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 5vw, 2rem);
+  --text-3xl: clamp(2rem, 6vw, 3rem);
+  --text-4xl: clamp(2.5rem, 7vw, 4rem);
+  --text-5xl: clamp(3rem, 8vw, 5rem);
+  --text-6xl: clamp(4rem, 10vw, 6rem);
+}
+
+/* ================================================
+   MOBILE-FIRST RESPONSIVE CONTAINERS
+   ================================================ */
+
+.responsive-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.responsive-section {
+  padding: var(--section-padding) 0;
+}
+
+.responsive-grid {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: 1fr;
+}
+
+/* ================================================
+   MOBILE STYLES (320px+)
+   ================================================ */
+
+/* Mobile Typography */
+.mobile-title {
+  font-size: var(--text-3xl);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.mobile-subtitle {
+  font-size: var(--text-lg);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-text {
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(20px);
+  z-index: 9999;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.mobile-nav.active {
+  left: 0;
+}
+
+.mobile-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.mobile-nav-link {
+  color: #C0C5CE;
+  text-decoration: none;
+  font-size: var(--text-xl);
+  font-weight: 500;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  color: #00d4ff;
+  padding-left: 1rem;
+}
+
+/* Mobile Hero Section */
+.mobile-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.mobile-hero-content {
+  max-width: 100%;
+  margin-bottom: 3rem;
+}
+
+.mobile-hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 280px;
+}
+
+.mobile-hero-button {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: var(--text-base);
+  text-align: center;
+  border-radius: var(--border-radius);
+}
+
+/* Mobile Cards */
+.mobile-card {
+  background: var(--terminal-bg-secondary);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: var(--border-radius);
+  padding: var(--card-padding);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.mobile-card:hover {
+  border-color: var(--neo-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+}
+
+/* Mobile Form Elements */
+.mobile-input {
+  width: 100%;
+  padding: 1rem;
+  background: var(--terminal-bg-primary);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: var(--border-radius);
+  color: var(--terminal-silver);
+  font-size: var(--text-base);
+  transition: all 0.3s ease;
+}
+
+.mobile-input:focus {
+  outline: none;
+  border-color: var(--neo-blue);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+/* Mobile Performance Optimizations */
+.mobile-optimized {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  will-change: transform;
+}
+
+/* ================================================
+   TABLET STYLES (768px+)
+   ================================================ */
+
+@media (min-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tablet-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Tablet Navigation */
+  .mobile-nav {
+    display: none;
+  }
+  
+  .tablet-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  /* Tablet Hero */
+  .mobile-hero-buttons {
+    flex-direction: row;
+    max-width: none;
+    justify-content: center;
+  }
+  
+  .mobile-hero-button {
+    width: auto;
+    min-width: 180px;
+  }
+  
+  /* Tablet Typography */
+  .tablet-title {
+    font-size: var(--text-4xl);
+  }
+  
+  .tablet-subtitle {
+    font-size: var(--text-xl);
+  }
+  
+  /* Tablet Layout */
+  .tablet-flex {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .tablet-flex-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .tablet-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+}
+
+/* ================================================
+   DESKTOP STYLES (1024px+)
+   ================================================ */
+
+@media (min-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .desktop-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Desktop Typography */
+  .desktop-title {
+    font-size: var(--text-5xl);
+  }
+  
+  .desktop-subtitle {
+    font-size: var(--text-2xl);
+  }
+  
+  /* Desktop Hero */
+  .desktop-hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .desktop-hero-content {
+    text-align: left;
+  }
+  
+  /* Desktop Navigation */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .desktop-nav-dropdown {
+    position: relative;
+  }
+  
+  .desktop-nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--terminal-bg-secondary);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .desktop-nav-dropdown:hover .desktop-nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  /* Desktop Cards */
+  .desktop-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .desktop-card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+  }
+  
+  /* Desktop Sidebars */
+  .desktop-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--terminal-bg-secondary);
+    border-right: 1px solid rgba(0, 212, 255, 0.2);
+    padding: 2rem;
+    overflow-y: auto;
+    z-index: 100;
+  }
+  
+  .desktop-main-content {
+    margin-left: 280px;
+    min-height: 100vh;
+  }
+}
+
+/* ================================================
+   LARGE DESKTOP STYLES (1280px+)
+   ================================================ */
+
+@media (min-width: 1280px) {
+  .responsive-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .large-desktop-grid-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .large-desktop-grid-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  /* Large Desktop Typography */
+  .large-desktop-title {
+    font-size: var(--text-6xl);
+  }
+  
+  .large-desktop-subtitle {
+    font-size: var(--text-3xl);
+  }
+  
+  /* Large Desktop Layouts */
+  .large-desktop-three-column {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 4rem;
+  }
+  
+  .large-desktop-sidebar {
+    width: 320px;
+  }
+  
+  .large-desktop-main-content {
+    margin-left: 320px;
+  }
+}
+
+/* ================================================
+   ULTRA-WIDE STYLES (1536px+)
+   ================================================ */
+
+@media (min-width: 1536px) {
+  .responsive-container {
+    max-width: 1600px;
+  }
+  
+  .ultra-wide-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .ultra-wide-hero {
+    grid-template-columns: 2fr 3fr;
+    gap: 6rem;
+  }
+  
+  .ultra-wide-section {
+    padding: 8rem 0;
+  }
+}
+
+/* ================================================
+   RTL RESPONSIVE ADJUSTMENTS
+   ================================================ */
+
+[dir="rtl"] .mobile-nav {
+  left: auto;
+  right: -100%;
+}
+
+[dir="rtl"] .mobile-nav.active {
+  right: 0;
+}
+
+[dir="rtl"] .mobile-nav-link:hover {
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+[dir="rtl"] .desktop-nav-dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .desktop-sidebar {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .desktop-main-content,
+[dir="rtl"] .large-desktop-main-content {
+  margin-left: 0;
+  margin-right: 280px;
+}
+
+[dir="rtl"] .large-desktop-main-content {
+  margin-right: 320px;
+}
+
+/* ================================================
+   PERFORMANCE-FIRST RESPONSIVE IMAGES
+   ================================================ */
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.responsive-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+}
+
+.responsive-image-container::before {
+  content: '';
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.responsive-image-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================================================
+   RESPONSIVE ANIMATIONS
+   ================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Performance-optimized animations for mobile */
+@media (max-width: 767px) {
+  .mobile-optimized-animation {
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+  }
+}
+
+/* Enhanced animations for desktop */
+@media (min-width: 1024px) {
+  .desktop-enhanced-animation {
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* ================================================
+   RESPONSIVE UTILITIES
+   ================================================ */
+
+/* Show/Hide utilities */
+.mobile-only {
+  display: block;
+}
+
+.tablet-only,
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+  
+  .tablet-only {
+    display: block;
+  }
+  
+  .tablet-up {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tablet-only {
+    display: none;
+  }
+  
+  .desktop-only {
+    display: block;
+  }
+  
+  .desktop-up {
+    display: block;
+  }
+}
+
+/* Responsive spacing utilities */
+.responsive-margin {
+  margin: var(--container-padding);
+}
+
+.responsive-padding {
+  padding: var(--container-padding);
+}
+
+.responsive-gap {
+  gap: var(--grid-gap);
+}
+
+/* ================================================
+   RESPONSIVE PERFORMANCE MONITORING
+   ================================================ */
+
+@media (max-width: 767px) {
+  .perf-indicator {
+    display: none; /* Hide on mobile to save resources */
+  }
+}
+
+/* ================================================
+   PRINT RESPONSIVE STYLES
+   ================================================ */
+
+@media print {
+  .responsive-container {
+    max-width: none;
+    padding: 0;
+  }
+  
+  .responsive-section {
+    padding: 1rem 0;
+  }
+  
+  .mobile-nav,
+  .desktop-nav,
+  .mobile-hero-buttons,
+  .perf-indicator {
+    display: none !important;
+  }
+  
+  .responsive-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .mobile-card,
+  .desktop-card-hover {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    color: black !important;
+    break-inside: avoid;
+  }
+}

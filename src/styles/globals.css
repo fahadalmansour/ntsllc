@@ -1,0 +1,1311 @@
+/* ✅ NEOTECHNOLOGY SOLUTIONS - COMPLETE DESIGN SYSTEM IMPORT */
+@import url('./design-system.css');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: var(--neo-bg-primary);
+  --foreground: var(--terminal-silver);
+  
+  /* ✅ ENHANCED: NeoTech Terminal Colors - Primary Design System */
+  --terminal-bg-primary: #0B0D12;      /* Dashboard cards background */
+  --terminal-bg-secondary: #12151C;    /* Elevated card backgrounds */
+  --terminal-silver: #C0C5CE;          /* Main readable text */
+  --terminal-green: #4AE54A;           /* Success, accents, progress */
+  
+  /* ✅ ENHANCED: Neo Brand Colors - Core Identity */
+  --neo-blue: #00d4ff;               /* Primary CTAs, highlights, links */
+  --neo-green: #00ff88;              /* Success states, Matrix effects */
+  --neo-bg-primary: #0a0a0a;         /* Main application background */
+  
+  /* ✅ FIXED: ShadCN Color System - Complete Terminal Override */
+  --card: var(--terminal-bg-secondary);
+  --card-foreground: var(--terminal-silver);
+  --popover: var(--terminal-bg-secondary);
+  --popover-foreground: var(--terminal-silver);
+  --primary: var(--neo-blue);
+  --primary-foreground: var(--neo-bg-primary);
+  --secondary: var(--terminal-bg-secondary);
+  --secondary-foreground: var(--terminal-silver);
+  --muted: var(--terminal-bg-primary);
+  --muted-foreground: rgba(192, 197, 206, 0.7);
+  --accent: var(--neo-blue);
+  --accent-foreground: var(--neo-bg-primary);
+  --destructive: #ff3333;
+  --destructive-foreground: #ffffff;
+  --border: rgba(192, 197, 206, 0.2);
+  --input: var(--terminal-bg-secondary);
+  --input-background: var(--terminal-bg-secondary);
+  --switch-background: var(--terminal-bg-secondary);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--neo-blue);
+  --chart-1: var(--neo-blue);
+  --chart-2: var(--neo-green);
+  --chart-3: var(--terminal-green);
+  --chart-4: #ff6b6b;
+  --chart-5: #ffd93d;
+  --radius: 0.625rem;
+  --sidebar: var(--terminal-bg-secondary);
+  --sidebar-foreground: var(--terminal-silver);
+  --sidebar-primary: var(--neo-blue);
+  --sidebar-primary-foreground: var(--neo-bg-primary);
+  --sidebar-accent: var(--terminal-bg-primary);
+  --sidebar-accent-foreground: var(--terminal-silver);
+  --sidebar-border: rgba(192, 197, 206, 0.2);
+  --sidebar-ring: var(--neo-blue);
+}
+
+/* ✅ ENHANCED: Dark Mode Support (Terminal Consistent) */
+.dark {
+  --background: var(--neo-bg-primary);
+  --foreground: var(--terminal-silver);
+  --card: var(--terminal-bg-secondary);
+  --card-foreground: var(--terminal-silver);
+  --popover: var(--terminal-bg-secondary);
+  --popover-foreground: var(--terminal-silver);
+  --primary: var(--neo-blue);
+  --primary-foreground: var(--neo-bg-primary);
+  --secondary: var(--terminal-bg-secondary);
+  --secondary-foreground: var(--terminal-silver);
+  --muted: var(--terminal-bg-primary);
+  --muted-foreground: rgba(192, 197, 206, 0.7);
+  --accent: var(--neo-blue);
+  --accent-foreground: var(--neo-bg-primary);
+  --destructive: #ff3333;
+  --destructive-foreground: #ffffff;
+  --border: rgba(192, 197, 206, 0.2);
+  --input: var(--terminal-bg-secondary);
+  --ring: var(--neo-blue);
+  --chart-1: var(--neo-blue);
+  --chart-2: var(--neo-green);
+  --chart-3: var(--terminal-green);
+  --chart-4: #ff6b6b;
+  --chart-5: #ffd93d;
+  --sidebar: var(--terminal-bg-secondary);
+  --sidebar-foreground: var(--terminal-silver);
+  --sidebar-primary: var(--neo-blue);
+  --sidebar-primary-foreground: var(--neo-bg-primary);
+  --sidebar-accent: var(--terminal-bg-primary);
+  --sidebar-accent-foreground: var(--terminal-silver);
+  --sidebar-border: rgba(192, 197, 206, 0.2);
+  --sidebar-ring: var(--neo-blue);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'JetBrains Mono', monospace !important;
+    background: var(--neo-bg-primary) !important;
+    color: var(--terminal-silver) !important;
+  }
+}
+
+/* ✅ ENHANCED: NeoTech Terminal Typography System */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.2;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--terminal-silver);
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.3;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--terminal-silver);
+    }
+
+    h3 {
+      font-size: clamp(1.25rem, 4vw, 1.75rem);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--terminal-silver);
+    }
+
+    h4 {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--terminal-silver);
+    }
+
+    p {
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.6;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--terminal-silver);
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--terminal-silver);
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    input, textarea, select {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--terminal-silver);
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--neo-bg-primary) !important;
+}
+
+/* ✅ CRITICAL FIX: Simplified animations to prevent timeout */
+
+/* ✅ BASIC: Essential animations only */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ✅ PERFORMANCE: Lightweight animations only */
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ✅ SAFE: Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ✅ ENHANCED: Advanced Terminal Animations with improved performance */
+@keyframes holographic-text {
+  0%, 100% {
+    text-shadow: 0 0 10px var(--neo-blue), 0 0 20px var(--neo-blue);
+  }
+  50% {
+    text-shadow: 0 0 5px var(--neo-green), 0 0 15px var(--neo-green);
+  }
+}
+
+@keyframes float-code {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% { 
+    transform: translateY(-10px) rotate(1deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes scan-lines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+/* ✅ ENHANCED: Data Flow Animation */
+@keyframes data-flow {
+  0% {
+    transform: translateX(-100px) translateY(0px);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(100vw) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+/* ✅ ENHANCED: Terminal Glow Effects */
+@keyframes terminal-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--neo-blue);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--neo-blue), 0 0 25px var(--neo-blue);
+  }
+}
+
+/* ✅ NEW: Enhanced Hero Animations */
+@keyframes neo-hero-glow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes neo-status-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes neo-typing-cursor {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* ✅ Animation Classes with GPU optimization */
+.matrix-effect {
+  animation: matrix-rain linear infinite;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.holographic-text {
+  animation: holographic-text 3s ease-in-out infinite;
+  will-change: text-shadow;
+}
+
+.terminal-cursor-blink {
+  animation: terminal-cursor-blink 1s infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+  will-change: box-shadow;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.circuit-glow-animation {
+  animation: circuit-glow 5s ease-in-out infinite;
+}
+
+.float-code-animation {
+  animation: float-code 8s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.data-flow-effect {
+  animation: data-flow 12s linear infinite;
+  will-change: transform, opacity;
+}
+
+.terminal-glow {
+  animation: terminal-glow 3s ease-in-out infinite;
+}
+
+/* ✅ NEW: Neo Hero Specific Animations */
+.neo-hero-glow {
+  background: linear-gradient(-45deg, var(--neo-blue), var(--neo-green), var(--neo-blue), var(--neo-green));
+  background-size: 400% 400%;
+  animation: neo-hero-glow 6s ease infinite;
+}
+
+.neo-status-pulse {
+  animation: neo-status-pulse 2s ease-in-out infinite;
+}
+
+.neo-typing-cursor {
+  animation: neo-typing-cursor 1.2s infinite;
+}
+
+/* ✅ ENHANCED: Enterprise Grid Patterns with better performance */
+.enterprise-grid {
+  background-image: 
+    linear-gradient(rgba(192, 197, 206, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(192, 197, 206, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-attachment: fixed;
+}
+
+.neural-network {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(0, 255, 136, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ✅ ENHANCED: Terminal Button Hover Effects */
+.neo-button-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.neo-button-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.neo-button-primary:hover::before {
+  left: 100%;
+}
+
+/* ✅ ENHANCED: Card Hover Effects */
+.neo-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.neo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.02), rgba(0, 255, 136, 0.02));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.neo-card:hover::before {
+  opacity: 1;
+}
+
+/* ✅ ENHANCED: Input Focus Effects */
+.neo-input {
+  position: relative;
+}
+
+.neo-input:focus {
+  position: relative;
+}
+
+.neo-input:focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--neo-blue);
+  border-radius: 6px;
+  pointer-events: none;
+  animation: terminal-glow 2s ease-in-out infinite;
+}
+
+/* ✅ ENHANCED: Landing Page Specific Classes */
+@layer components {
+  /* ✅ LANDING PAGE: Hero Terminal Window Styling */
+  .hero-terminal-window {
+    background: var(--terminal-bg-secondary) !important;
+    border: 1px solid rgba(0, 212, 255, 0.3) !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .hero-terminal-header {
+    background: var(--terminal-bg-secondary) !important;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2) !important;
+    padding: 12px 16px;
+  }
+
+  .hero-terminal-content {
+    background: var(--terminal-bg-secondary) !important;
+    color: var(--terminal-silver) !important;
+    padding: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ✅ LANDING PAGE: Platform Pills */
+  .platform-pill {
+    background: transparent !important;
+    border: 1px solid rgba(0, 212, 255, 0.3) !important;
+    color: rgba(192, 197, 206, 0.8) !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .platform-pill:hover {
+    border-color: var(--neo-blue) !important;
+    background: rgba(0, 212, 255, 0.1) !important;
+    color: var(--neo-blue) !important;
+  }
+
+  /* ✅ LANDING PAGE: Success Badge */
+  .success-badge {
+    background: rgba(0, 212, 255, 0.1) !important;
+    border: 1px solid rgba(0, 212, 255, 0.3) !important;
+    color: var(--neo-blue) !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ✅ LANDING PAGE: Trust Bar Stats */
+  .trust-stat {
+    font-family: 'JetBrains Mono', monospace !important;
+  }
+
+  .trust-stat-number {
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    color: var(--terminal-silver) !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    line-height: 1.2;
+  }
+
+  .trust-stat-label {
+    font-size: 14px !important;
+    color: rgba(192, 197, 206, 0.6) !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    line-height: 1.4;
+  }
+
+  /* ✅ LANDING PAGE: CTA Buttons Override */
+  .hero-cta-primary {
+    background: var(--neo-blue) !important;
+    color: var(--neo-bg-primary) !important;
+    border: none !important;
+    padding: 16px 32px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 16px !important;
+    transition: all 0.3s ease !important;
+    transform: translateZ(0) !important;
+    will-change: transform, background-color !important;
+  }
+
+  .hero-cta-primary:hover {
+    background: var(--neo-green) !important;
+    transform: translateY(-1px) scale(1.05) !important;
+    box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3) !important;
+  }
+
+  .hero-cta-secondary {
+    background: transparent !important;
+    color: var(--neo-blue) !important;
+    border: 1px solid var(--neo-blue) !important;
+    padding: 16px 32px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 16px !important;
+    transition: all 0.3s ease !important;
+    will-change: transform, background-color !important;
+  }
+
+  .hero-cta-secondary:hover {
+    background: rgba(0, 212, 255, 0.1) !important;
+    color: var(--neo-blue) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  /* ✅ LANDING PAGE: Headlines */
+  .hero-headline {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    color: var(--terminal-silver) !important;
+  }
+
+  .hero-headline-gradient {
+    background: linear-gradient(to right, var(--neo-blue), var(--neo-green)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+  }
+
+  .hero-description {
+    font-family: 'JetBrains Mono', monospace !important;
+    color: rgba(192, 197, 206, 0.8) !important;
+    line-height: 1.6 !important;
+    font-size: clamp(1rem, 3vw, 1.25rem) !important;
+  }
+
+  /* ✅ NEW: Advanced Interactive Components */
+  .neo-interactive-card {
+    background: var(--terminal-bg-secondary) !important;
+    border: 1px solid rgba(192, 197, 206, 0.2) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .neo-interactive-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .neo-interactive-card:hover::before {
+    left: 100%;
+  }
+
+  .neo-interactive-card:hover {
+    border-color: var(--neo-blue) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.2) !important;
+  }
+
+  /* ✅ NEW: Dashboard Widget System */
+  .neo-dashboard-widget {
+    background: var(--terminal-bg-secondary) !important;
+    border: 1px solid rgba(0, 212, 255, 0.2) !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .neo-dashboard-widget-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 16px !important;
+    padding-bottom: 12px !important;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1) !important;
+  }
+
+  .neo-dashboard-widget-title {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: var(--terminal-silver) !important;
+  }
+
+  .neo-dashboard-widget-value {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    color: var(--neo-blue) !important;
+    line-height: 1 !important;
+  }
+
+  .neo-dashboard-widget-change {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .neo-dashboard-widget-change.positive {
+    color: var(--neo-green) !important;
+  }
+
+  .neo-dashboard-widget-change.negative {
+    color: #ff6b6b !important;
+  }
+
+  /* ✅ NEW: Enhanced Form System */
+  .neo-form-group {
+    margin-bottom: 20px !important;
+  }
+
+  .neo-form-label {
+    display: block !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: var(--terminal-silver) !important;
+    margin-bottom: 8px !important;
+  }
+
+  .neo-form-label.required::after {
+    content: ' *';
+    color: #ff6b6b !important;
+  }
+
+  .neo-form-input {
+    width: 100% !important;
+    background: var(--terminal-bg-primary) !important;
+    border: 1px solid rgba(192, 197, 206, 0.3) !important;
+    border-radius: 6px !important;
+    padding: 12px 16px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    color: var(--terminal-silver) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .neo-form-input:focus {
+    border-color: var(--neo-blue) !important;
+    box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2) !important;
+    outline: none !important;
+  }
+
+  .neo-form-input.error {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2) !important;
+  }
+
+  .neo-form-textarea {
+    width: 100% !important;
+    background: var(--terminal-bg-primary) !important;
+    border: 1px solid rgba(192, 197, 206, 0.3) !important;
+    border-radius: 6px !important;
+    padding: 12px 16px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    color: var(--terminal-silver) !important;
+    resize: vertical !important;
+    min-height: 100px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .neo-form-textarea:focus {
+    border-color: var(--neo-blue) !important;
+    box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2) !important;
+    outline: none !important;
+  }
+
+  .neo-form-select {
+    width: 100% !important;
+    background: var(--terminal-bg-primary) !important;
+    border: 1px solid rgba(192, 197, 206, 0.3) !important;
+    border-radius: 6px !important;
+    padding: 12px 16px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    color: var(--terminal-silver) !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .neo-form-select:focus {
+    border-color: var(--neo-blue) !important;
+    box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2) !important;
+    outline: none !important;
+  }
+
+  .neo-form-error {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 12px !important;
+    color: #ff6b6b !important;
+    margin-top: 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .neo-form-help {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 12px !important;
+    color: rgba(192, 197, 206, 0.6) !important;
+    margin-top: 4px !important;
+  }
+
+  /* ✅ NEW: Enhanced Button Variants */
+  .neo-button-success {
+    background: var(--neo-green) !important;
+    color: var(--neo-bg-primary) !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+  }
+
+  .neo-button-success:hover {
+    background: var(--neo-blue) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3) !important;
+  }
+
+  .neo-button-warning {
+    background: #ffeb3b !important;
+    color: var(--neo-bg-primary) !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+  }
+
+  .neo-button-warning:hover {
+    background: #fdd835 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 20px rgba(255, 235, 59, 0.3) !important;
+  }
+
+  .neo-button-error {
+    background: #ff6b6b !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+  }
+
+  .neo-button-error:hover {
+    background: #ff5252 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3) !important;
+  }
+
+  .neo-button-ghost {
+    background: transparent !important;
+    color: var(--terminal-silver) !important;
+    border: 1px solid rgba(192, 197, 206, 0.3) !important;
+    padding: 12px 24px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+  }
+
+  .neo-button-ghost:hover {
+    background: var(--terminal-bg-secondary) !important;
+    border-color: var(--neo-blue) !important;
+    color: var(--neo-blue) !important;
+  }
+
+  .neo-button-outline {
+    background: transparent !important;
+    color: var(--neo-blue) !important;
+    border: 1px solid var(--neo-blue) !important;
+    padding: 12px 24px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+  }
+
+  .neo-button-outline:hover {
+    background: var(--neo-blue) !important;
+    color: var(--neo-bg-primary) !important;
+  }
+
+  /* ✅ NEW: Advanced Status System */
+  .neo-status-card {
+    background: var(--terminal-bg-secondary) !important;
+    border-left: 4px solid var(--neo-green) !important;
+    border-radius: 0 8px 8px 0 !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .neo-status-card.warning {
+    border-left-color: #ffeb3b !important;
+  }
+
+  .neo-status-card.error {
+    border-left-color: #ff6b6b !important;
+  }
+
+  .neo-status-card.info {
+    border-left-color: var(--neo-blue) !important;
+  }
+
+  .neo-status-message {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    color: var(--terminal-silver) !important;
+    margin: 0 !important;
+  }
+
+  .neo-status-timestamp {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 12px !important;
+    color: rgba(192, 197, 206, 0.6) !important;
+    margin-top: 4px !important;
+  }
+
+  /* ✅ NEW: Command Line Interface */
+  .neo-terminal-command {
+    background: var(--terminal-bg-primary) !important;
+    border: 1px solid rgba(0, 212, 255, 0.3) !important;
+    border-radius: 8px !important;
+    padding: 16px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    margin-bottom: 16px !important;
+  }
+
+  .neo-terminal-prompt {
+    color: var(--neo-green) !important;
+    font-weight: 600 !important;
+  }
+
+  .neo-terminal-command-text {
+    color: var(--neo-blue) !important;
+    margin-left: 8px !important;
+  }
+
+  .neo-terminal-output {
+    color: var(--terminal-silver) !important;
+    margin-top: 8px !important;
+    white-space: pre-wrap !important;
+    line-height: 1.4 !important;
+  }
+
+  .neo-terminal-cursor {
+    background: var(--neo-green) !important;
+    width: 2px !important;
+    height: 1em !important;
+    display: inline-block !important;
+    animation: terminal-cursor-blink 1s infinite !important;
+  }
+
+  /* ✅ NEW: Data Visualization */
+  .neo-chart-container {
+    background: var(--terminal-bg-secondary) !important;
+    border: 1px solid rgba(0, 212, 255, 0.2) !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    position: relative !important;
+  }
+
+  .neo-chart-title {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: var(--terminal-silver) !important;
+    margin-bottom: 16px !important;
+    text-align: center !important;
+  }
+
+  .neo-metric-bar {
+    width: 100% !important;
+    height: 8px !important;
+    background: var(--terminal-bg-primary) !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+    margin-bottom: 8px !important;
+  }
+
+  .neo-metric-fill {
+    height: 100% !important;
+    background: linear-gradient(90deg, var(--neo-blue), var(--neo-green)) !important;
+    border-radius: 4px !important;
+    transition: width 0.6s ease !important;
+  }
+
+  .neo-metric-label {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    color: var(--terminal-silver) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* ✅ NEW: Notification System */
+  .neo-notification {
+    background: var(--terminal-bg-secondary) !important;
+    border: 1px solid rgba(0, 212, 255, 0.3) !important;
+    border-radius: 8px !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    animation: slide-in-from-right 0.3s ease !important;
+  }
+
+  .neo-notification.success {
+    border-left: 4px solid var(--neo-green) !important;
+  }
+
+  .neo-notification.warning {
+    border-left: 4px solid #ffeb3b !important;
+  }
+
+  .neo-notification.error {
+    border-left: 4px solid #ff6b6b !important;
+  }
+
+  .neo-notification.info {
+    border-left: 4px solid var(--neo-blue) !important;
+  }
+
+  .neo-notification-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 8px !important;
+  }
+
+  .neo-notification-title {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: var(--terminal-silver) !important;
+  }
+
+  .neo-notification-close {
+    background: none !important;
+    border: none !important;
+    color: var(--terminal-silver) !important;
+    cursor: pointer !important;
+    padding: 4px !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .neo-notification-close:hover {
+    background: rgba(192, 197, 206, 0.1) !important;
+    color: #ff6b6b !important;
+  }
+
+  .neo-notification-message {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    color: rgba(192, 197, 206, 0.8) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* ✅ NEW: Advanced Tables */
+  .neo-table {
+    width: 100% !important;
+    background: var(--terminal-bg-secondary) !important;
+    border: 1px solid rgba(0, 212, 255, 0.2) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+
+  .neo-table-header {
+    background: var(--terminal-bg-primary) !important;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2) !important;
+  }
+
+  .neo-table-header th {
+    padding: 16px 12px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: var(--neo-blue) !important;
+    text-align: left !important;
+    border-right: 1px solid rgba(0, 212, 255, 0.1) !important;
+  }
+
+  .neo-table-header th:last-child {
+    border-right: none !important;
+  }
+
+  .neo-table-row {
+    border-bottom: 1px solid rgba(192, 197, 206, 0.1) !important;
+    transition: background-color 0.2s ease !important;
+  }
+
+  .neo-table-row:hover {
+    background: rgba(0, 212, 255, 0.05) !important;
+  }
+
+  .neo-table-row:last-child {
+    border-bottom: none !important;
+  }
+
+  .neo-table-cell {
+    padding: 12px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    color: var(--terminal-silver) !important;
+    border-right: 1px solid rgba(192, 197, 206, 0.1) !important;
+  }
+
+  .neo-table-cell:last-child {
+    border-right: none !important;
+  }
+
+  .neo-table-action {
+    background: none !important;
+    border: none !important;
+    color: var(--neo-blue) !important;
+    cursor: pointer !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .neo-table-action:hover {
+    background: rgba(0, 212, 255, 0.1) !important;
+    color: var(--neo-green) !important;
+  }
+
+  /* ✅ NEW: Utility Classes */
+  .neo-text-gradient {
+    background: linear-gradient(135deg, var(--neo-blue), var(--neo-green)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+  }
+
+  .neo-border-gradient {
+    border: 1px solid transparent !important;
+    background: linear-gradient(var(--terminal-bg-secondary), var(--terminal-bg-secondary)) padding-box,
+                linear-gradient(135deg, var(--neo-blue), var(--neo-green)) border-box !important;
+  }
+
+  .neo-glow {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3) !important;
+  }
+
+  .neo-glow-green {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3) !important;
+  }
+
+  .neo-pulse {
+    animation: pulse 2s infinite !important;
+  }
+
+  .neo-float {
+    animation: float-code 6s ease-in-out infinite !important;
+  }
+
+  /* ✅ NEW: Responsive Grid System */
+  .neo-grid-responsive {
+    display: grid !important;
+    gap: 16px !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  }
+
+  .neo-grid-auto {
+    display: grid !important;
+    gap: 16px !important;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+  }
+
+  .neo-flex-center {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .neo-flex-between {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .neo-flex-start {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .neo-flex-end {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  /* ✅ NEW: Spacing System */
+  .neo-space-xs { gap: 4px !important; }
+  .neo-space-sm { gap: 8px !important; }
+  .neo-space-md { gap: 16px !important; }
+  .neo-space-lg { gap: 24px !important; }
+  .neo-space-xl { gap: 32px !important; }
+
+  .neo-padding-xs { padding: 8px !important; }
+  .neo-padding-sm { padding: 12px !important; }
+  .neo-padding-md { padding: 16px !important; }
+  .neo-padding-lg { padding: 24px !important; }
+  .neo-padding-xl { padding: 32px !important; }
+
+  .neo-margin-xs { margin: 8px !important; }
+  .neo-margin-sm { margin: 12px !important; }
+  .neo-margin-md { margin: 16px !important; }
+  .neo-margin-lg { margin: 24px !important; }
+  .neo-margin-xl { margin: 32px !important; }
+}
+
+/* ✅ NEW: Additional Animation Keyframes */
+@keyframes slide-in-from-right {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ✅ NEW: Enhanced Responsive Design */
+@media (max-width: 640px) {
+  .neo-grid-responsive {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .neo-dashboard-widget {
+    padding: 16px !important;
+  }
+  
+  .neo-dashboard-widget-value {
+    font-size: 24px !important;
+  }
+  
+  .neo-table {
+    font-size: 12px !important;
+  }
+  
+  .neo-table-header th,
+  .neo-table-cell {
+    padding: 8px 6px !important;
+  }
+}

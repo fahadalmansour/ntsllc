@@ -1,0 +1,572 @@
+/* 
+ * NeoTechnology Solutions - Critical CSS
+ * Performance-optimized critical path CSS for above-the-fold content
+ * This CSS is inlined for immediate rendering
+ */
+
+/* ================================================
+   CRITICAL PERFORMANCE STYLES
+   ================================================ */
+
+/* Essential font loading with font-display optimization */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Critical for performance */
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Critical layout and positioning */
+html {
+  font-size: 14px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #C0C5CE;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Critical above-the-fold hero styles */
+.hero-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #12151C 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #00d4ff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  color: #C0C5CE;
+  margin: 0 0 2rem 0;
+  opacity: 0.9;
+}
+
+/* Critical button styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #00d4ff, #00ff88);
+  color: #0a0a0a;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0); /* GPU acceleration */
+  will-change: transform;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: #00d4ff;
+  text-decoration: none;
+  border: 2px solid #00d4ff;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.btn-secondary:hover {
+  background: #00d4ff;
+  color: #0a0a0a;
+  transform: translateY(-2px);
+}
+
+/* Critical header styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  transform: translateZ(0);
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #00d4ff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: #C0C5CE;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.1);
+}
+
+/* Critical loading spinner */
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0a0a0a;
+}
+
+.spinner {
+  width: 4rem;
+  height: 4rem;
+  border: 4px solid #00d4ff;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Critical responsive styles */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .nav-menu {
+    gap: 1rem;
+  }
+}
+
+/* Critical terminal effects for hero */
+.terminal-glow {
+  text-shadow: 
+    0 0 10px #00ff88,
+    0 0 20px #00ff88,
+    0 0 30px #00ff88;
+  animation: terminalGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes terminalGlow {
+  from {
+    text-shadow: 
+      0 0 10px #00ff88,
+      0 0 20px #00ff88,
+      0 0 30px #00ff88;
+  }
+  to {
+    text-shadow: 
+      0 0 15px #00d4ff,
+      0 0 25px #00d4ff,
+      0 0 35px #00d4ff;
+  }
+}
+
+/* Critical matrix background */
+.matrix-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.matrix-line {
+  position: absolute;
+  color: #00ff88;
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  white-space: nowrap;
+  animation: matrixFall linear infinite;
+}
+
+@keyframes matrixFall {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Critical performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* GPU acceleration for critical elements */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  will-change: transform;
+}
+
+/* Optimize scrolling performance */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Critical accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus states for accessibility */
+.focus-visible:focus-visible {
+  outline: 2px solid #00d4ff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Critical layout containers */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+/* Critical color utilities */
+.text-neo-blue {
+  color: #00d4ff;
+}
+
+.text-neo-green {
+  color: #00ff88;
+}
+
+.text-terminal-silver {
+  color: #C0C5CE;
+}
+
+.bg-terminal-primary {
+  background-color: #0B0D12;
+}
+
+.bg-terminal-secondary {
+  background-color: #12151C;
+}
+
+/* Critical spacing utilities */
+.p-0 { padding: 0; }
+.p-4 { padding: 1rem; }
+.p-8 { padding: 2rem; }
+.m-0 { margin: 0; }
+.m-4 { margin: 1rem; }
+.m-8 { margin: 2rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-8 { margin-top: 2rem; }
+
+/* Critical transition utilities */
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-colors {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-transform {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Critical hover effects */
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* ================================================
+   CRITICAL RTL SUPPORT
+   ================================================ */
+
+/* RTL text direction */
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="ltr"] {
+  text-align: left;
+  direction: ltr;
+}
+
+/* RTL flex direction */
+[dir="rtl"] .flex {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-menu {
+  flex-direction: row-reverse;
+}
+
+/* RTL spacing adjustments */
+[dir="rtl"] .hero-subtitle,
+[dir="rtl"] .hero-title {
+  text-align: right;
+}
+
+[dir="ltr"] .hero-subtitle,
+[dir="ltr"] .hero-title {
+  text-align: left;
+}
+
+/* ================================================
+   CRITICAL PERFORMANCE MONITORING
+   ================================================ */
+
+/* Development-only performance indicator */
+.perf-indicator {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(11, 13, 18, 0.9);
+  border: 1px solid #00d4ff;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: #00ff88;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+}
+
+/* Critical error states */
+.error-boundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #C0C5CE;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-title {
+  font-size: 2rem;
+  color: #00d4ff;
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+/* ================================================
+   CRITICAL PRINT STYLES
+   ================================================ */
+
+@media print {
+  .no-print,
+  .header,
+  .perf-indicator {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .hero-title {
+    color: black !important;
+    background: none !important;
+    -webkit-text-fill-color: black !important;
+  }
+}
