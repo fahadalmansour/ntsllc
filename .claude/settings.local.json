@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.figma.com)",
+      "Bash(ssh *)",
+      "Read(//Users/fahadalmansour/Downloads/**)",
+      "Bash(unzip -l /Users/fahadalmansour/Downloads/pxfabcirmctfswutvmjg.storage.zip)",
+      "Bash(pnpm install *)",
+      "Bash(pnpm build *)",
+      "Bash(pnpm add *)",
+      "Bash(ln -sf /Users/fahadalmansour/NTSLLC/src /Users/fahadalmansour/NTSLLC/rst/src)",
+      "Bash(ln -sf /Users/fahadalmansour/NTSLLC/index.html /Users/fahadalmansour/NTSLLC/rst/index.html)",
+      "Bash(ln -sf /Users/fahadalmansour/NTSLLC/rst/node_modules /Users/fahadalmansour/NTSLLC/node_modules)",
+      "Bash(rsync -avz --progress -e \"ssh -p 21098\" /Users/fahadalmansour/NTSLLC/rst/dist/ fsalmansour@162.254.39.146:~/neotechnology.solutions/)",
+      "Bash(rsync *)",
+      "Bash(scp *)",
+      "Bash(npx vite *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://neotechnology.solutions/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://neotechnology.solutions/pricing)",
+      "Bash(curl -s https://neotechnology.solutions/assets/index-Dq7zcRlH.css)",
+      "WebFetch(domain:neotechnology.solutions)",
+      "Bash(curl *)",
+      "Bash(node -e \"require\\('puppeteer'\\)\")",
+      "Bash(playwright screenshot *)",
+      "Bash(node *)",
+      "Bash(sips -c 900 1440 /tmp/hero-crop.png --out /tmp/hero-crop.png)",
+      "Bash(sips -c 900 1440 /tmp/hero-v2.png --out /tmp/hero-v2.png)",
+      "Bash(sips -c 1200 1440 --cropOffset 900 0 /tmp/full-check.png --out /tmp/section-mid.png)",
+      "Bash(sips -c 800 1440 --cropOffset 2500 0 /tmp/full-check.png --out /tmp/section-footer.png)",
+      "Bash(sips -c 900 1440 /tmp/hero-fullscreen.png --out /tmp/hero-fullscreen.png)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}
