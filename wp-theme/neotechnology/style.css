@@ -842,3 +842,83 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .btn-outline-indigo { color: #18181B; border-color: rgba(0,0,0,0.25); }
 .btn-outline-indigo:hover { background: #18181B; color: #fff; border-color: #18181B; }
+
+/* ─── Interactive Terminal ───────────────────────────────────────────── */
+.panel-body {
+  padding: 20px 22px;
+  min-height: 220px;
+  max-height: 260px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.panel-body::-webkit-scrollbar { width: 4px; }
+.panel-body::-webkit-scrollbar-track { background: transparent; }
+.panel-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+.term-line {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.9;
+  white-space: pre;
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+
+.term-line.cmd   { color: #e4e4e7; }
+.term-line.cmd .term-prompt { color: #4ADE80; margin-right: 6px; }
+.term-line.ok    { color: #4ADE80; }
+.term-line.info  { color: #a1a1aa; }
+.term-line.err   { color: #F87171; }
+.term-line.dim   { color: rgba(255,255,255,0.2); }
+.term-line.white { color: #ffffff; font-weight: 600; }
+.term-line.user  { color: #93C5FD; }
+.term-line.user .term-prompt { color: #93C5FD; }
+
+.term-cursor {
+  display: inline-block;
+  width: 7px; height: 14px;
+  background: #e4e4e7;
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  animation: cur-blink 1s step-end infinite;
+}
+
+@keyframes cur-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Input row */
+.panel-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 22px 14px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.panel-prompt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  color: #4ADE80;
+  flex-shrink: 0;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  color: #e4e4e7;
+  caret-color: #4ADE80;
+  padding: 0;
+}
+
+.terminal-input::placeholder {
+  color: rgba(255,255,255,0.2);
+  font-style: italic;
+}

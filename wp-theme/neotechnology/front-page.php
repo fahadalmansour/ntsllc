@@ -47,28 +47,36 @@
         </div>
       </div>
 
-      <!-- Right: terminal panel -->
-      <div class="hero-panel">
+      <!-- Right: interactive terminal -->
+      <div class="hero-panel" id="hero-terminal">
         <div class="panel-bar">
           <div class="panel-dots">
             <div class="panel-dot panel-dot-r"></div>
             <div class="panel-dot panel-dot-y"></div>
             <div class="panel-dot panel-dot-g"></div>
           </div>
-          <span class="panel-title">neo@deployment-terminal</span>
-          <span class="panel-title">neotechnology.solutions</span>
+          <span class="panel-title">neo@deployment-terminal — bash</span>
+          <span class="panel-title panel-clock" id="panel-clock"></span>
         </div>
-        <div class="panel-body">
-          <div class="panel-line cmd">$ neotech init --platform=production</div>
-          <div class="panel-line ok">✓  store-setup ............ ready</div>
-          <div class="panel-line ok">✓  payment-gateways ....... 8+ active</div>
-          <div class="panel-line ok">✓  automation ............. 6,000+ templates</div>
-          <div class="panel-line ok">✓  markets ................ US + GCC online</div>
-          <div class="panel-line dim">————————————————————————————</div>
-          <div class="panel-line ok">STATUS: READY FOR DEPLOYMENT</div>
+
+        <div class="panel-body" id="terminal-output">
+          <!-- lines injected by JS -->
         </div>
+
+        <div class="panel-input-row" id="terminal-input-row">
+          <span class="panel-prompt">$</span>
+          <input
+            type="text"
+            id="terminal-input"
+            class="terminal-input"
+            placeholder="type a command…"
+            autocomplete="off"
+            spellcheck="false"
+          >
+        </div>
+
         <div class="panel-status">
-          <span>● READY</span>
+          <span id="term-status">● BOOTING</span>
           <span>neotechnology.solutions</span>
           <span>Wyoming LLC</span>
         </div>
