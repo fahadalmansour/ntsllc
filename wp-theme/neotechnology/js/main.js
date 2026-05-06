@@ -153,7 +153,6 @@
 
     function runBoot(index, afterDone) {
       if (index >= BOOT.length) {
-        if (statusEl) statusEl.textContent = '● READY';
         /* idle blinking cursor at end */
         const { row, content } = makeLine('cmd', 'neo@nts:~$', '');
         row.appendChild(makeCursor());
@@ -291,8 +290,14 @@
       panel.addEventListener('click', () => inputEl.focus());
     }
 
+    /* ── Status colour: amber while booting, green when ready ── */
+    if (statusEl) { statusEl.textContent = '● BOOTING'; statusEl.style.color = '#FBBF24'; }
+
     /* ── Start ── */
-    setTimeout(() => runBoot(0, appendIdlePrompt), 400);
+    setTimeout(() => runBoot(0, () => {
+      if (statusEl) statusEl.style.color = '#4ADE80';
+      appendIdlePrompt();
+    }), 400);
 
   })();
 
