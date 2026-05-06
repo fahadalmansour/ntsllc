@@ -6,7 +6,7 @@
     <div class="hero-inner">
 
       <!-- Left: headline -->
-      <div class="fade-in">
+      <div class="">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
           <span class="hero-badge-text">Online · Wyoming LLC · NeoTechnology Solutions</span>
@@ -48,7 +48,7 @@
       </div>
 
       <!-- Right: terminal panel -->
-      <div class="hero-panel fade-in">
+      <div class="hero-panel">
         <div class="panel-bar">
           <div class="panel-dots">
             <div class="panel-dot panel-dot-r"></div>
@@ -82,7 +82,7 @@
 <section class="services section-pad" id="services">
   <div class="container">
 
-    <div class="services-header fade-in">
+    <div class="services-header">
       <div class="eyebrow">
         <span class="eyebrow-dot" style="background:rgba(255,255,255,0.3)"></span>
         Services
@@ -105,7 +105,7 @@
       ];
       foreach ($services as [$num, $title, $desc]):
       ?>
-      <div class="service-card fade-in">
+      <div class="service-card">
         <div class="service-num"><?= esc_html($num) ?></div>
         <h3 class="service-title"><?= esc_html($title) ?></h3>
         <p class="service-desc"><?= esc_html($desc) ?></p>
@@ -113,7 +113,7 @@
       <?php endforeach; ?>
     </div>
 
-    <div class="services-footer fade-in">
+    <div class="services-footer">
       <a href="#contact" class="btn btn-ghost" style="display:inline-flex">View all services →</a>
     </div>
 
@@ -125,7 +125,7 @@
   <div class="container">
     <div class="why-layout">
 
-      <div class="why-left fade-in">
+      <div class="why-left">
         <div class="eyebrow"><span class="eyebrow-dot"></span>Why us</div>
         <h2 class="section-title">Built for merchants who refuse to compromise</h2>
         <p class="section-sub">Four principles we never trade away — no matter the project size.</p>
@@ -141,7 +141,7 @@
         ];
         foreach ($whys as [$num, $title, $body]):
         ?>
-        <div class="why-card fade-in">
+        <div class="why-card">
           <div class="why-num"><?= esc_html($num) ?></div>
           <h3 class="why-card-title"><?= esc_html($title) ?></h3>
           <p class="why-card-body"><?= esc_html($body) ?></p>
@@ -157,7 +157,7 @@
 <section class="process section-pad" id="process">
   <div class="container">
 
-    <div class="process-header fade-in">
+    <div class="process-header">
       <div class="eyebrow" style="color:rgba(255,255,255,0.4)">
         <span class="eyebrow-dot" style="background:rgba(255,255,255,0.3)"></span>
         How it works
@@ -178,7 +178,7 @@
       ];
       foreach ($steps as [$num, $title, $desc]):
       ?>
-      <div class="process-step fade-in">
+      <div class="process-step">
         <div class="step-number"><?= esc_html($num) ?></div>
         <h3 class="step-title"><?= esc_html($title) ?></h3>
         <p class="step-desc"><?= esc_html($desc) ?></p>
@@ -186,7 +186,7 @@
       <?php endforeach; ?>
     </div>
 
-    <div class="process-cta fade-in">
+    <div class="process-cta">
       <a href="#contact" class="btn btn-ghost" style="display:inline-flex">Book a free scoping call →</a>
     </div>
 
@@ -197,12 +197,12 @@
 <section class="tech section-pad" id="technology">
   <div class="container">
 
-    <div class="tech-header fade-in">
+    <div class="tech-header">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Integrations</div>
       <h2 class="section-title">Every platform your business already uses</h2>
     </div>
 
-    <div class="tech-pill-wrap fade-in">
+    <div class="tech-pill-wrap">
       <?php
       $platforms = [
         'Shopify','WooCommerce','Salla','Zid','Wuilt',
@@ -217,7 +217,7 @@
       ?>
     </div>
 
-    <div class="tech-stats fade-in">
+    <div class="tech-stats">
       <div class="tech-stat"><div class="tech-stat-val">6,000+</div><div class="tech-stat-label">Automation templates</div></div>
       <div class="tech-stat"><div class="tech-stat-val">8+</div><div class="tech-stat-label">Payment gateways</div></div>
       <div class="tech-stat"><div class="tech-stat-val">24</div><div class="tech-stat-label">Platforms integrated</div></div>
@@ -232,7 +232,7 @@
   <div class="container">
     <div class="guarantees-layout">
 
-      <div class="guarantees-left fade-in">
+      <div class="guarantees-left">
         <div class="eyebrow"><span class="eyebrow-dot" style="background:rgba(255,255,255,0.3)"></span>Our commitment</div>
         <h2 class="section-title">Built on trust. Proven by results.</h2>
         <p class="section-sub">Client testimonials are added as projects complete. Here is exactly what every engagement guarantees.</p>
@@ -259,7 +259,7 @@
         ];
         foreach ($gs as [$icon, $title, $body]):
         ?>
-        <div class="guarantee-card fade-in">
+        <div class="guarantee-card">
           <div class="guarantee-icon"><?= esc_html($icon) ?></div>
           <h3 class="guarantee-title"><?= esc_html($title) ?></h3>
           <p class="guarantee-body"><?= esc_html($body) ?></p>
@@ -282,7 +282,7 @@
 <section class="pricing section-pad" id="pricing">
   <div class="container">
 
-    <div class="pricing-header fade-in">
+    <div class="pricing-header">
       <div class="eyebrow"><span class="eyebrow-dot"></span>Pricing</div>
       <h2 class="section-title">Transparent pricing.<br>No surprises.</h2>
       <p class="section-sub">One-time project fees. You see the exact price before committing. No monthly retainers, no hidden extras.</p>
@@ -290,7 +290,7 @@
 
     <div class="pricing-grid">
 
-      <div class="pricing-card fade-in">
+      <div class="pricing-card">
         <div class="pricing-name">Starter</div>
         <div class="pricing-price"><sup>$</sup>999</div>
         <div class="pricing-note">One-time setup fee</div>
@@ -305,7 +305,7 @@
         <a href="#contact" class="pricing-cta pricing-cta-outline">Choose Starter</a>
       </div>
 
-      <div class="pricing-card featured fade-in">
+      <div class="pricing-card featured">
         <div class="pricing-badge">Most popular</div>
         <div class="pricing-name">Professional</div>
         <div class="pricing-price"><sup>$</sup>2,499</div>
@@ -321,7 +321,7 @@
         <a href="#contact" class="pricing-cta pricing-cta-primary">Choose Professional</a>
       </div>
 
-      <div class="pricing-card fade-in">
+      <div class="pricing-card">
         <div class="pricing-name">GCC Special</div>
         <div class="pricing-price"><sup>$</sup>3,499</div>
         <div class="pricing-note">One-time setup fee</div>
@@ -336,7 +336,7 @@
         <a href="#contact" class="pricing-cta pricing-cta-outline">Choose GCC</a>
       </div>
 
-      <div class="pricing-card fade-in">
+      <div class="pricing-card">
         <div class="pricing-name">Enterprise</div>
         <div class="pricing-price" style="font-size:36px;padding-top:6px">Custom</div>
         <div class="pricing-note">Scoped per project</div>
@@ -353,7 +353,7 @@
 
     </div>
 
-    <p class="pricing-footnote fade-in">
+    <p class="pricing-footnote">
       All prices USD · One-time setup fees · Add-ons: managed n8n $149 setup + $15/mo · quick-fix $99–$299
     </p>
 
@@ -365,7 +365,7 @@
   <div class="container">
     <div class="about-layout">
 
-      <div class="about-left fade-in">
+      <div class="about-left">
         <div class="eyebrow"><span class="eyebrow-dot" style="background:rgba(255,255,255,0.3)"></span>About us</div>
         <h2 class="section-title">One contract.<br>One point of accountability.</h2>
         <div class="about-body">
@@ -376,19 +376,19 @@
       </div>
 
       <div class="about-stats">
-        <div class="about-stat fade-in">
+        <div class="about-stat">
           <div class="about-stat-val">Wyoming</div>
           <div class="about-stat-label">State of incorporation, United States</div>
         </div>
-        <div class="about-stat fade-in">
+        <div class="about-stat">
           <div class="about-stat-val">GCC + US</div>
           <div class="about-stat-label">Active service markets</div>
         </div>
-        <div class="about-stat fade-in">
+        <div class="about-stat">
           <div class="about-stat-val">$999</div>
           <div class="about-stat-label">Starting price, fixed-fee packages</div>
         </div>
-        <div class="about-stat fade-in">
+        <div class="about-stat">
           <div class="about-stat-val">7 days</div>
           <div class="about-stat-label">First staging environment delivered</div>
         </div>
@@ -403,7 +403,7 @@
   <div class="container">
     <div class="faq-layout">
 
-      <div class="faq-left fade-in">
+      <div class="faq-left">
         <div class="eyebrow"><span class="eyebrow-dot"></span>FAQ</div>
         <h2 class="section-title">Common questions, honest answers</h2>
         <p class="section-sub">Everything you need to know before starting a project.</p>
@@ -415,7 +415,7 @@
         </div>
       </div>
 
-      <div class="accordion fade-in">
+      <div class="accordion">
         <?php
         $faqs = [
           ['How long does a typical project take?',
@@ -460,13 +460,13 @@
   <div class="container">
     <div class="partner-layout">
 
-      <div class="partner-left fade-in">
+      <div class="partner-left">
         <div class="eyebrow"><span class="eyebrow-dot" style="background:rgba(255,255,255,0.3)"></span>Regional partner</div>
         <h2 class="section-title">On-the-ground presence in Saudi Arabia</h2>
         <p class="section-sub">For clients operating in the Kingdom, we work alongside an independent local partner for relationship management and on-ground engagement.</p>
       </div>
 
-      <div class="partner-card fade-in">
+      <div class="partner-card">
         <div class="partner-header">
           <div class="partner-icon">SA</div>
           <div>
@@ -492,7 +492,7 @@
   <div class="container">
     <div class="contact-layout">
 
-      <div class="contact-left fade-in">
+      <div class="contact-left">
         <div class="eyebrow"><span class="eyebrow-dot"></span>Get started</div>
         <h2 class="section-title">Ready to launch?</h2>
         <p class="section-sub">Book a free 30-minute scoping call. No sales pressure, no commitment — just an honest conversation about your project.</p>
@@ -505,7 +505,7 @@
         </div>
       </div>
 
-      <div class="contact-form-wrap fade-in">
+      <div class="contact-form-wrap">
         <?php if (isset($_GET['sent'])): ?>
           <div style="background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.25);border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:14px;color:#15803D;">
             Message received — we will be in touch within one business day.
