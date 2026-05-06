@@ -24,7 +24,7 @@ Text Domain: neotechnology
   --border:       rgba(255,255,255,0.07);
   --border-mid:   rgba(255,255,255,0.12);
   --warm-white:   #FAFAF9;
-  --text-dim:     rgba(255,255,255,0.45);
+  --text-dim:     rgba(255,255,255,0.52);
   --text-mid:     rgba(255,255,255,0.65);
   --light-bg:     #F8F7F5;
   --light-bg-2:   #F2F1EF;
@@ -219,10 +219,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .btn-ghost:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.18); }
 .btn-outline-indigo {
-  background: transparent; color: var(--indigo);
-  border: 1.5px solid rgba(255,255,255,0.5);
+  background: transparent; color: rgba(255,255,255,0.85);
+  border: 1.5px solid rgba(255,255,255,0.35);
 }
-.btn-outline-indigo:hover { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+.btn-outline-indigo:hover {
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.6);
+}
 
 .hero-stats {
   display: grid; grid-template-columns: repeat(4,1fr);
@@ -261,14 +265,16 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .panel-line.ok  { color: #4ADE80; }
 .panel-line.dim { color: rgba(255,255,255,0.2); }
 .panel-status {
-  background: var(--indigo);
+  background: #0A0A0C;
+  border-top: 1px solid rgba(255,255,255,0.07);
   padding: 11px 18px;
   display: flex; justify-content: space-between; align-items: center;
 }
 .panel-status span {
   font-family: 'JetBrains Mono', monospace; font-size: 11px;
-  font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.08em;
+  font-weight: 500; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 0.08em;
 }
+#term-status { color: #4ADE80; font-weight: 700; }
 
 /* ─── SERVICES ───────────────────────────────────────────────────────── */
 .services {
@@ -475,11 +481,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .guarantee-icon {
   width: 40px; height: 40px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 17px; margin-bottom: 18px;
+  font-size: 18px; margin-bottom: 18px;
+  color: rgba(255,255,255,0.75);
 }
 .guarantee-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -839,9 +846,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .faq-cta-box .btn-primary { background: #18181B; color: #fff; box-shadow: none; }
 .faq-cta-box .btn-primary:hover { background: #3F3F46; }
-
-.btn-outline-indigo { color: #18181B; border-color: rgba(0,0,0,0.25); }
-.btn-outline-indigo:hover { background: #18181B; color: #fff; border-color: #18181B; }
 
 /* ─── Interactive Terminal ───────────────────────────────────────────── */
 .panel-body {
