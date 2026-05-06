@@ -13,10 +13,10 @@ Text Domain: neotechnology
 
 /* ─── Custom Properties ──────────────────────────────────────────────── */
 :root {
-  --indigo:       #059669;
-  --indigo-light: #34D399;
-  --indigo-mid:   #10B981;
-  --indigo-dark:  #065F46;
+  --indigo:       #ffffff;
+  --indigo-light: #e4e4e7;
+  --indigo-mid:   #f4f4f5;
+  --indigo-dark:  #a1a1aa;
   --near-black:   #09090B;
   --surface:      #111113;
   --surface-2:    #1A1A1E;
@@ -102,8 +102,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.06); }
 .nav-cta {
-  font-size: 13px !important; font-weight: 700 !important; color: #fff !important;
-  background: var(--indigo) !important;
+  font-size: 13px !important; font-weight: 700 !important; color: #09090B !important;
+  background: #ffffff !important;
   padding: 7px 18px !important; border-radius: 8px !important;
   transition: background 0.15s, transform 0.15s !important;
 }
@@ -140,9 +140,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 65% 55% at 68% 38%, rgba(5,150,105,0.18) 0%, transparent 58%),
-    radial-gradient(ellipse 45% 65% at 5% 85%,  rgba(16,185,129,0.07) 0%, transparent 55%),
-    radial-gradient(ellipse 30% 40% at 90% 90%, rgba(5,150,105,0.05) 0%, transparent 60%);
+    radial-gradient(ellipse 65% 55% at 68% 38%, rgba(255,255,255,0.18) 0%, transparent 58%),
+    radial-gradient(ellipse 45% 65% at 5% 85%,  rgba(255,255,255,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 30% 40% at 90% 90%, rgba(255,255,255,0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -150,8 +150,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   content: '';
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(5,150,105,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(5,150,105,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 48px 48px;
   pointer-events: none;
 }
@@ -163,8 +163,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(5,150,105,0.1);
-  border: 1px solid rgba(16,185,129,0.25);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
   border-radius: 100px; padding: 6px 14px; margin-bottom: 32px;
 }
 .hero-badge-dot {
@@ -185,7 +185,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .hero-title em {
   font-style: normal;
-  background: linear-gradient(135deg, #6EE7B7 0%, #10B981 50%, #059669 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 50%, #a1a1aa 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
@@ -205,13 +205,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   transition: all 0.2s; white-space: nowrap; cursor: pointer;
 }
 .btn-primary {
-  background: var(--indigo); color: #fff;
-  box-shadow: 0 4px 24px rgba(5,150,105,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+  background: #ffffff; color: #09090B;
+  box-shadow: 0 4px 24px rgba(255,255,255,0.15), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 .btn-primary:hover {
-  background: var(--indigo-mid);
+  background: #e4e4e7;
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(5,150,105,0.5);
+  box-shadow: 0 8px 32px rgba(255,255,255,0.2);
 }
 .btn-ghost {
   background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.8);
@@ -220,7 +220,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .btn-ghost:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.18); }
 .btn-outline-indigo {
   background: transparent; color: var(--indigo);
-  border: 1.5px solid rgba(5,150,105,0.5);
+  border: 1.5px solid rgba(255,255,255,0.5);
 }
 .btn-outline-indigo:hover { background: var(--indigo); color: #fff; border-color: var(--indigo); }
 
@@ -238,10 +238,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* Terminal panel */
 .hero-panel {
   background: var(--surface);
-  border: 1px solid rgba(16,185,129,0.2);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 0 80px rgba(5,150,105,0.12), 0 24px 64px rgba(0,0,0,0.6);
+  box-shadow: 0 0 80px rgba(255,255,255,0.12), 0 24px 64px rgba(0,0,0,0.6);
 }
 .panel-bar {
   background: var(--surface-2);
@@ -279,7 +279,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   content: '';
   position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
   width: 800px; height: 400px;
-  background: radial-gradient(ellipse, rgba(5,150,105,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -332,7 +332,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .why-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 88px; align-items: start; }
 .why-left { position: sticky; top: 88px; }
-.why-left .eyebrow { color: var(--indigo); }
+.why-left .eyebrow { color: #52525B; }
 .why-left h2 { font-size: clamp(32px, 3.2vw, 46px); color: var(--dark-text); margin-bottom: 18px; }
 .why-left p { font-size: 16px; color: var(--mid-text); line-height: 1.7; }
 
@@ -348,12 +348,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .why-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 48px rgba(0,0,0,0.08);
-  border-color: rgba(5,150,105,0.2);
+  border-color: rgba(255,255,255,0.2);
 }
 .why-num {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px; font-weight: 800; color: var(--indigo);
-  background: rgba(5,150,105,0.08); border-radius: 6px;
+  font-size: 13px; font-weight: 800; color: #3F3F46;
+  background: rgba(0,0,0,0.06); border-radius: 6px;
   padding: 4px 10px; display: inline-block; margin-bottom: 20px;
   letter-spacing: 0;
 }
@@ -369,7 +369,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   content: '';
   position: absolute; bottom: -100px; right: -100px;
   width: 500px; height: 500px;
-  background: radial-gradient(ellipse, rgba(5,150,105,0.07) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(255,255,255,0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -421,7 +421,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .tech-pill:hover {
   border-color: var(--indigo); color: var(--indigo);
-  background: rgba(5,150,105,0.04);
+  background: rgba(255,255,255,0.04);
   transform: translateY(-1px);
 }
 
@@ -469,14 +469,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   transition: border-color 0.2s, background 0.2s, transform 0.2s;
 }
 .guarantee-card:hover {
-  border-color: rgba(16,185,129,0.3);
+  border-color: rgba(255,255,255,0.3);
   background: var(--surface-2);
   transform: translateY(-2px);
 }
 .guarantee-icon {
   width: 40px; height: 40px;
-  background: rgba(5,150,105,0.1);
-  border: 1px solid rgba(16,185,129,0.2);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
   font-size: 17px; margin-bottom: 18px;
@@ -489,7 +489,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .early-client-card {
   grid-column: span 2;
   background: transparent;
-  border: 1px dashed rgba(16,185,129,0.25);
+  border: 1px dashed rgba(255,255,255,0.25);
   border-radius: var(--radius);
   padding: 20px 24px;
   display: flex; align-items: center; gap: 14px;
@@ -525,18 +525,18 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .pricing-card.featured {
   border: 2px solid var(--indigo);
-  box-shadow: 0 0 0 4px rgba(5,150,105,0.07), 0 20px 60px rgba(5,150,105,0.14);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.07), 0 20px 60px rgba(255,255,255,0.14);
   transform: scale(1.025);
 }
 .pricing-card.featured:hover { transform: scale(1.025) translateY(-4px); }
 
 .pricing-badge {
   position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--indigo-light), var(--indigo));
+  background: linear-gradient(135deg, #e4e4e7, #ffffff);
   color: #fff; font-size: 11px; font-weight: 700;
   letter-spacing: 0.07em; text-transform: uppercase;
   padding: 5px 16px; border-radius: 100px; white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(5,150,105,0.35);
+  box-shadow: 0 4px 12px rgba(255,255,255,0.35);
 }
 .pricing-name {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -565,7 +565,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .pricing-features li:last-child { border: none; }
 .check {
   width: 17px; height: 17px; border-radius: 50%;
-  background: rgba(5,150,105,0.1);
+  background: rgba(255,255,255,0.1);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-top: 1px; font-size: 9px; color: var(--indigo); font-weight: 800;
 }
@@ -575,7 +575,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-weight: 700; font-size: 14px;
   padding: 13px; border-radius: 10px; transition: all 0.2s; cursor: pointer;
 }
-.pricing-cta-primary { background: var(--indigo); color: #fff; box-shadow: 0 4px 16px rgba(5,150,105,0.3); }
+.pricing-cta-primary { background: var(--indigo); color: #fff; box-shadow: 0 4px 16px rgba(255,255,255,0.3); }
 .pricing-cta-primary:hover { background: var(--indigo-mid); }
 .pricing-cta-outline {
   background: transparent; border: 1.5px solid var(--light-border); color: #52525B;
@@ -633,7 +633,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-weight: 700; font-size: 15px; color: var(--dark-text);
   transition: background 0.15s; gap: 16px; cursor: pointer;
 }
-.accordion-trigger:hover { background: rgba(5,150,105,0.02); }
+.accordion-trigger:hover { background: rgba(255,255,255,0.02); }
 .accordion-trigger.active { color: var(--indigo); }
 .accordion-icon {
   width: 20px; height: 20px; flex-shrink: 0;
@@ -663,7 +663,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .partner-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 28px; }
 .partner-icon {
   width: 50px; height: 50px;
-  background: rgba(5,150,105,0.1); border: 1px solid rgba(16,185,129,0.2);
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
   font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px;
@@ -675,7 +675,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .partner-tag {
   display: inline-flex; align-items: center; gap: 7px;
-  background: rgba(5,150,105,0.08); border: 1px solid rgba(16,185,129,0.2);
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
   border-radius: 100px; padding: 4px 12px;
   font-size: 12px; color: var(--indigo-light);
 }
@@ -725,7 +725,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   outline: none; transition: border-color 0.15s, box-shadow 0.15s; appearance: none;
 }
 .form-input:focus, .form-select:focus, .form-textarea:focus {
-  border-color: var(--indigo); box-shadow: 0 0 0 3px rgba(5,150,105,0.08);
+  border-color: var(--indigo); box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
   background: #fff;
 }
 .form-textarea { resize: vertical; min-height: 120px; }
@@ -733,7 +733,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   width: 100%; background: var(--indigo); color: #fff;
   font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 15px;
   padding: 14px; border-radius: 10px; transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 4px 20px rgba(5,150,105,0.3);
+  box-shadow: 0 4px 20px rgba(255,255,255,0.3);
 }
 .form-submit:hover { background: var(--indigo-mid); transform: translateY(-1px); }
 
@@ -802,3 +802,43 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .tech-stat + .tech-stat { border-left: none; border-top: 1px solid var(--light-border); }
   .why-left, .faq-left, .guarantees-left, .partner-left, .contact-left { position: static; }
 }
+
+/* ─── Light-section overrides (white accent → near-black) ──────────── */
+.tech-header .eyebrow,
+.pricing-header .eyebrow,
+.faq-left .eyebrow,
+.contact-left .eyebrow { color: #18181B; }
+
+.tech-stat-val { color: #18181B; }
+
+.tech-pill:hover { border-color: #18181B; color: #18181B; background: rgba(0,0,0,0.03); }
+
+.why-card:hover { border-color: rgba(0,0,0,0.15); }
+
+.pricing-card.featured {
+  border-color: #18181B;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.05), 0 20px 60px rgba(0,0,0,0.1);
+}
+.pricing-badge { background: linear-gradient(135deg, #3F3F46, #18181B); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.pricing-cta-primary { background: #18181B; color: #fff; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+.pricing-cta-primary:hover { background: #3F3F46; }
+.pricing-cta-outline:hover { border-color: #18181B; color: #18181B; }
+
+.check { background: rgba(0,0,0,0.06); color: #18181B; }
+
+.accordion-trigger.active { color: #18181B; }
+.accordion-trigger.active .accordion-icon { color: #18181B; }
+.accordion-trigger:hover { background: rgba(0,0,0,0.02); }
+
+.contact-info-line span { color: #18181B; }
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: #18181B; box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+.form-submit { background: #18181B; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+.form-submit:hover { background: #3F3F46; }
+
+.faq-cta-box .btn-primary { background: #18181B; color: #fff; box-shadow: none; }
+.faq-cta-box .btn-primary:hover { background: #3F3F46; }
+
+.btn-outline-indigo { color: #18181B; border-color: rgba(0,0,0,0.25); }
+.btn-outline-indigo:hover { background: #18181B; color: #fff; border-color: #18181B; }
