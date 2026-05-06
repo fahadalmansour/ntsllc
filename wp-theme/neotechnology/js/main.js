@@ -45,7 +45,9 @@
     });
   });
 
-  /* ── Fade-in on scroll ── */
+  /* ── Fade-in on scroll — activate only after JS ready ── */
+  document.body.classList.add('js-animate');
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -53,10 +55,10 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
   document.querySelectorAll('.fade-in').forEach((el, i) => {
-    el.style.transitionDelay = (i % 4) * 80 + 'ms';
+    el.style.transitionDelay = (i % 4) * 60 + 'ms';
     observer.observe(el);
   });
 
