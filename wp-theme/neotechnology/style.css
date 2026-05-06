@@ -24,8 +24,9 @@ Text Domain: neotechnology
   --border:       rgba(255,255,255,0.07);
   --border-mid:   rgba(255,255,255,0.12);
   --warm-white:   #FAFAF9;
-  --text-dim:     rgba(255,255,255,0.52);
-  --text-mid:     rgba(255,255,255,0.65);
+  --text-dim:     rgba(255,255,255,0.64);
+  --text-mid:     rgba(255,255,255,0.72);
+  --green:        #4ADE80;
   --light-bg:     #F8F7F5;
   --light-bg-2:   #F2F1EF;
   --light-border: #E4E2DE;
@@ -185,7 +186,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .hero-title em {
   font-style: normal;
-  background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 50%, #a1a1aa 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #86efac 55%, #4ADE80 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
@@ -290,7 +291,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 .services-header { text-align: center; max-width: 660px; margin: 0 auto 72px; }
-.services-header .eyebrow { color: rgba(255,255,255,0.38); justify-content: center; }
+.services-header .eyebrow { color: var(--green); justify-content: center; }
 .services-header h2 { font-size: clamp(34px, 3.6vw, 52px); color: var(--warm-white); margin-bottom: 20px; }
 .services-header p { font-size: 17px; color: rgba(255,255,255,0.45); line-height: 1.7; }
 
@@ -320,8 +321,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .service-num {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px; font-weight: 600;
-  color: var(--indigo-light); letter-spacing: 0.1em;
+  font-size: 10.5px; font-weight: 700;
+  color: var(--green); letter-spacing: 0.1em;
   margin-bottom: 20px; display: block;
 }
 .service-title {
@@ -329,7 +330,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-size: 15.5px; font-weight: 700;
   color: var(--warm-white); margin-bottom: 12px; line-height: 1.3;
 }
-.service-desc { font-size: 13.5px; color: var(--text-dim); line-height: 1.65; }
+.service-desc { font-size: 14px; color: var(--text-dim); line-height: 1.68; }
 
 .services-footer { text-align: center; margin-top: 48px; }
 
@@ -400,7 +401,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .step-number {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em;
-  color: var(--indigo-light); text-transform: uppercase; margin-bottom: 20px;
+  color: var(--green); text-transform: uppercase; margin-bottom: 20px;
 }
 .step-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
