@@ -37,12 +37,11 @@
       <div class="footer-col">
         <div class="footer-col-title">Legal</div>
         <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Refund Policy</a></li>
-          <li><a href="#">SLA</a></li>
-          <li><a href="#">Cookies</a></li>
-          <li><a href="#">AUP</a></li>
+          <li><a href="<?= esc_url(home_url('/privacy-policy/')) ?>">Privacy Policy</a></li>
+          <li><a href="<?= esc_url(home_url('/terms-of-service/')) ?>">Terms of Service</a></li>
+          <li><a href="<?= esc_url(home_url('/refund-policy/')) ?>">Refund Policy</a></li>
+          <li><a href="<?= esc_url(home_url('/sla/')) ?>">SLA</a></li>
+          <li><a href="<?= esc_url(home_url('/cookie-policy/')) ?>">Cookies</a></li>
         </ul>
       </div>
     </div>

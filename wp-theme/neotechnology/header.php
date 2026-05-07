@@ -14,13 +14,21 @@
       Neo<span>Technology</span>
     </a>
 
+<?php
+$home   = esc_url(home_url('/'));
+$is_front = is_front_page();
+function neo_anchor($anchor) {
+    global $is_front, $home;
+    return $is_front ? '#' . $anchor : $home . '#' . $anchor;
+}
+?>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact" class="nav-cta">Get started</a></li>
+      <li><a href="<?= neo_anchor('services') ?>">Services</a></li>
+      <li><a href="<?= neo_anchor('process') ?>">Process</a></li>
+      <li><a href="<?= neo_anchor('pricing') ?>">Pricing</a></li>
+      <li><a href="<?= neo_anchor('about') ?>">About</a></li>
+      <li><a href="<?= neo_anchor('faq') ?>">FAQ</a></li>
+      <li><a href="<?= neo_anchor('contact') ?>" class="nav-cta">Get started</a></li>
     </ul>
 
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
@@ -30,10 +38,10 @@
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#services">Services</a>
-  <a href="#process">Process</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#about">About</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact">Get started →</a>
+  <a href="<?= neo_anchor('services') ?>">Services</a>
+  <a href="<?= neo_anchor('process') ?>">Process</a>
+  <a href="<?= neo_anchor('pricing') ?>">Pricing</a>
+  <a href="<?= neo_anchor('about') ?>">About</a>
+  <a href="<?= neo_anchor('faq') ?>">FAQ</a>
+  <a href="<?= neo_anchor('contact') ?>">Get started →</a>
 </div>
