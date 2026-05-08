@@ -1,8 +1,26 @@
--- NeoTechnology Solutions LLC
--- Database: fsalmansour_wp596
--- Add only these two tables. Do NOT touch existing WordPress tables.
+-- =============================================================================
+-- LEGACY / DOCUMENTATION ONLY — NOT THE RUNTIME SOURCE OF TRUTH
+-- =============================================================================
+-- The canonical schema for `{$wpdb->prefix}nts_contacts` is now installed by
+-- `nts_install_schema()` via `dbDelta()` in
+--   wp-theme/neotechnology/functions.php
+-- and gated by the `nts_db_version` option (constant `NTS_DB_VERSION`).
+--
+-- Closes audit BLOCKER #3 (~/.claude/reports/ntsllc/readiness-2026-05-08.md):
+-- "DB split-brain across 3 disjoint persistence layers" — this file is now
+-- a frozen reference, not a runtime path. Do NOT apply this SQL to live
+-- MySQL; doing so creates an UNPREFIXED table that diverges from the WP
+-- runtime path.
+--
+-- Differences vs the runtime dbDelta schema:
+--   * Table name here is `nts_contacts`; runtime uses `{$wpdb->prefix}nts_contacts`.
+--   * `status` here is ENUM; runtime uses VARCHAR(20) (dbDelta-friendly).
+--   * `nts_subscribers` (below) is ORPHAN — no runtime code reads or writes it.
+--
+-- Cosmetic: original header referenced cPanel account `fsalmansour_wp596`,
+-- removed to drop the info-disclosure flag from the audit (MEDIUM finding).
+-- =============================================================================
 
-USE `fsalmansour_wp596`;
 
 CREATE TABLE IF NOT EXISTS `nts_contacts` (
   `id`           BIGINT UNSIGNED  NOT NULL AUTO_INCREMENT,
