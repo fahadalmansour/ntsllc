@@ -44,3 +44,13 @@ Owning Claude agents:
 CI: `.github/workflows/claude-ops.yml` (pnpm install + lint/typecheck/build gated until script names confirmed; PHP -l on wp-theme; Supabase schema parse-check; secrets scan).
 
 The Notion mirror lives in the **NeoTech Sites & Repos** database.
+
+## Live site state — added 2026-05-07
+
+The live `https://neotechnology.solutions` (LiteSpeed-hosted WordPress, PHP 8.4.20) currently serves a near-default WP install — homepage + Hello-world post + Sample Page; no real business content. This repo's `wp-theme/neotechnology/` is **not deployed** to the live site.
+
+Latest readiness audit: `~/.claude/reports/ntsllc/readiness-2026-05-07.md`. Verdict: **NOT READY.** Findings: user enumeration via `/wp-json/wp/v2/users` + `?author=1` + user sitemap (admin slug `fahadnts`); xmlrpc + unthrottled wp-login + no WAF/2FA; no security headers (HSTS, X-Frame-Options, CSP, Referrer-Policy, Permissions-Policy); no SEO meta or OG tags.
+
+Cannot confirm without WP admin access: limit-login-attempts / Wordfence / 2FA configuration; whether `wp-cron` runs on system cron in addition to public hits; DKIM record; whether the Next.js project here will eventually replace the WP install.
+
+When the user is ready to harden the live WP, get admin credentials → install `WordPress/mcp-adapter` plugin + mint a non-Admin Application Password → `claude mcp add ntsllc_mcp -s user ...` (Path A per the parent plan at `~/.claude/plans/ecommerce-agent-claude-code-mellow-papert.md`).

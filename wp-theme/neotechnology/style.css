@@ -109,6 +109,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   transition: background 0.15s, transform 0.15s !important;
 }
 .nav-cta:hover { background: var(--indigo-mid) !important; transform: translateY(-1px); }
+.lang-toggle {
+  font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;
+  padding: 5px 10px; text-decoration: none;
+  transition: color .15s, border-color .15s;
+  font-family: 'Cairo', sans-serif;
+}
+.lang-toggle:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+.mobile-menu .lang-toggle { border-color: rgba(255,255,255,0.2); padding: 8px 14px; font-size: 15px; }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
 .nav-hamburger span {
   display: block; width: 22px; height: 2px;

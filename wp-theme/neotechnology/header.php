@@ -30,6 +30,7 @@ function neo_anchor($anchor) {
       <li><a href="<?= neo_anchor('faq') ?>">FAQ</a></li>
       <li><a href="<?= neo_anchor('contact') ?>" class="nav-cta">Get started</a></li>
     </ul>
+    <a href="<?= esc_url(home_url('/ar/')) ?>" class="lang-toggle" aria-label="Arabic version">عر</a>
 
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -44,4 +45,5 @@ function neo_anchor($anchor) {
   <a href="<?= neo_anchor('about') ?>">About</a>
   <a href="<?= neo_anchor('faq') ?>">FAQ</a>
   <a href="<?= neo_anchor('contact') ?>">Get started →</a>
+  <a href="<?= esc_url(home_url('/ar/')) ?>" class="lang-toggle">عر</a>
 </div>

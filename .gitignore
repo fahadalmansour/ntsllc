@@ -1,5 +1,7 @@
 # Dependencies
+node_modules
 node_modules/
+rst/node_modules/
 
 # Build output
 rst/dist/
@@ -21,3 +23,7 @@ npm-debug.log*
 
 # Type cache
 *.tsbuildinfo
+
+# Local design / preview artifacts
+design/
+render_tmp_puppeteer_*/

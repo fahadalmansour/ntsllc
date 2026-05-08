@@ -30,7 +30,7 @@ const NETWORK_FIRST_PATTERNS = [
   /\/auth\//
 ];
 
-// Cache-first strategies for these patterns  
+// Cache-first strategies for these patterns
 const CACHE_FIRST_PATTERNS = [
   /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
   /\.(?:woff|woff2|ttf|eot)$/,
@@ -40,7 +40,7 @@ const CACHE_FIRST_PATTERNS = [
 // Install event - precache resources with performance optimization
 self.addEventListener('install', (event) => {
   console.log('🚀 NeoTech Service Worker installing...');
-  
+
   event.waitUntil(
     Promise.all([
       // Precache critical resources
@@ -64,7 +64,7 @@ self.addEventListener('install', (event) => {
 // Activate event - clean up old caches with improved performance
 self.addEventListener('activate', (event) => {
   console.log('⚡ Service Worker activating...');
-  
+
   event.waitUntil(
     Promise.all([
       // Clean up old caches
@@ -159,7 +159,7 @@ async function cacheFirstStrategy(request) {
 // API-specific caching strategy with TTL
 async function apiCacheStrategy(request) {
   const cacheKey = `${request.url}-${Date.now()}`;
-  
+
   try {
     const networkResponse = await fetch(request);
     if (networkResponse.ok) {
@@ -184,7 +184,7 @@ async function apiCacheStrategy(request) {
     if (cachedResponse) {
       const cachedAt = cachedResponse.headers.get('sw-cached-at');
       const ttl = cachedResponse.headers.get('sw-ttl');
-      
+
       if (cachedAt && ttl) {
         const age = Date.now() - parseInt(cachedAt);
         if (age < parseInt(ttl)) {
@@ -200,7 +200,7 @@ async function apiCacheStrategy(request) {
 // Stale-while-revalidate strategy for balanced performance
 async function staleWhileRevalidateStrategy(request) {
   const cachedResponse = await caches.match(request);
-  
+
   const fetchPromise = fetch(request).then(async (networkResponse) => {
     if (networkResponse.ok) {
       const cache = await caches.open(RUNTIME_CACHE);
@@ -243,11 +243,11 @@ async function manageCacheSize(cacheName) {
   const cache = await caches.open(cacheName);
   const requests = await cache.keys();
   const limit = CACHE_LIMITS[cacheName] || 50;
-  
+
   if (requests.length > limit) {
     const entriesToDelete = requests.length - limit;
     console.log(`🧹 Cache cleanup: removing ${entriesToDelete} entries from ${cacheName}`);
-    
+
     // Delete oldest entries (LRU)
     for (let i = 0; i < entriesToDelete; i++) {
       await cache.delete(requests[i]);
@@ -258,7 +258,7 @@ async function manageCacheSize(cacheName) {
 // Background sync with enhanced error handling
 self.addEventListener('sync', (event) => {
   console.log('🔄 Background sync triggered:', event.tag);
-  
+
   switch (event.tag) {
     case 'background-sync':
       event.waitUntil(handleBackgroundSync());
@@ -276,10 +276,10 @@ self.addEventListener('sync', (event) => {
 async function handleBackgroundSync() {
   try {
     console.log('📡 Processing background sync...');
-    
+
     // Get pending requests from IndexedDB
     const pendingRequests = await getPendingRequests();
-    
+
     for (const request of pendingRequests) {
       try {
         const response = await fetch(request.url, {
@@ -287,7 +287,7 @@ async function handleBackgroundSync() {
           headers: request.headers,
           body: request.body
         });
-        
+
         if (response.ok) {
           await removePendingRequest(request.id);
           console.log('✅ Synced request:', request.url);
@@ -305,7 +305,7 @@ async function handleBackgroundSync() {
 async function syncAnalyticsData() {
   try {
     console.log('📊 Syncing analytics data...');
-    
+
     const analyticsData = await getStoredAnalytics();
     if (analyticsData.length > 0) {
       const response = await fetch('/api/analytics/batch', {
@@ -313,7 +313,7 @@ async function syncAnalyticsData() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(analyticsData)
       });
-      
+
       if (response.ok) {
         await clearStoredAnalytics();
         console.log('✅ Analytics data synced');
@@ -328,10 +328,10 @@ async function syncAnalyticsData() {
 async function performCacheCleanup() {
   try {
     console.log('🧹 Performing cache cleanup...');
-    
+
     const cacheNames = [RUNTIME_CACHE, IMAGE_CACHE, API_CACHE];
     await Promise.all(cacheNames.map(manageCacheSize));
-    
+
     console.log('✅ Cache cleanup completed');
   } catch (error) {
     console.error('❌ Cache cleanup failed:', error);
@@ -341,32 +341,32 @@ async function performCacheCleanup() {
 // Message handling for communication with main thread
 self.addEventListener('message', (event) => {
   console.log('📨 Service Worker received message:', event.data);
-  
+
   const { type, data } = event.data || {};
-  
+
   switch (type) {
     case 'SKIP_WAITING':
       self.skipWaiting();
       break;
-      
+
     case 'GET_VERSION':
       event.ports[0].postMessage({ version: CACHE_NAME });
       break;
-      
+
     case 'CACHE_URLS':
       event.waitUntil(cacheResources(data.urls));
       break;
-      
+
     case 'CLEAR_CACHE':
       event.waitUntil(clearSpecificCache(data.cacheName));
       break;
-      
+
     case 'GET_CACHE_STATS':
       event.waitUntil(getCacheStats().then(stats => {
         event.ports[0].postMessage({ stats });
       }));
       break;
-      
+
     case 'PRELOAD_ROUTES':
       event.waitUntil(preloadRoutes(data.routes));
       break;
@@ -388,13 +388,13 @@ async function clearSpecificCache(cacheName) {
 async function getCacheStats() {
   const cacheNames = await caches.keys();
   const stats = {};
-  
+
   for (const name of cacheNames) {
     const cache = await caches.open(name);
     const keys = await cache.keys();
     stats[name] = keys.length;
   }
-  
+
   return stats;
 }
 
