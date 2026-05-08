@@ -27,3 +27,13 @@ npm-debug.log*
 # Local design / preview artifacts
 design/
 render_tmp_puppeteer_*/
+
+# Supabase secrets — never commit (audit BLOCKER #1).
+# The `info.tsx` files now read from env (`.env.local`); .env files
+# below are gitignored. The legacy top-level `utils/supabase/` path
+# (deleted in this commit) is also locked out as defense-in-depth.
+utils/supabase/
+.env
+.env.local
+.env.production
+.env.development
