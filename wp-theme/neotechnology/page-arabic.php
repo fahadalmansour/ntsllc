@@ -673,6 +673,10 @@ $ar_url    = esc_url(home_url('/ar/'));
         <form method="post" action="<?= $admin_url ?>">
           <?php wp_nonce_field('neo_contact', 'neo_contact_nonce'); ?>
           <input type="hidden" name="action" value="neo_contact">
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+            <label for="neo_hp_url">Website</label>
+            <input type="text" id="neo_hp_url" name="neo_hp_url" tabindex="-1" autocomplete="off" value="">
+          </div>
 
           <div class="form-row">
             <div class="form-group">

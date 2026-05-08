@@ -22,6 +22,8 @@ function neo_register_menus() {
 }
 add_action('init', 'neo_register_menus');
 
+const NEO_CONTACT_RATE_WINDOW = 60; // seconds between submissions per IP
+
 /* ── Contact form handler ── */
 function neo_handle_contact() {
     $nonce = isset($_POST['neo_contact_nonce'])
@@ -29,6 +31,25 @@ function neo_handle_contact() {
         : '';
     if (!wp_verify_nonce($nonce, 'neo_contact')) {
         return;
+    }
+
+    // Honeypot: hidden field must be empty. Bots fill every input; humans never see it.
+    if (!empty($_POST['neo_hp_url'])) {
+        wp_safe_redirect(home_url('/?sent=1'));
+        exit;
+    }
+
+    // Per-IP rate limit via transient. Silent success on throttle to avoid threshold probing.
+    $ip = isset($_SERVER['REMOTE_ADDR'])
+        ? substr(sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])), 0, 45)
+        : '';
+    if ($ip !== '') {
+        $rate_key = 'neo_contact_rl_' . md5($ip);
+        if (get_transient($rate_key)) {
+            wp_safe_redirect(home_url('/?sent=1'));
+            exit;
+        }
+        set_transient($rate_key, 1, NEO_CONTACT_RATE_WINDOW);
     }
 
     $name    = isset($_POST['name'])    ? sanitize_text_field(wp_unslash($_POST['name']))         : '';
@@ -43,6 +64,7 @@ function neo_handle_contact() {
     }
 
     $clean_name = preg_replace('/[\r\n]+/', ' ', $name);
+    $display    = '"' . str_replace(['"', '<', '>'], '', $clean_name) . '"';
     $site_email = get_option('admin_email');
 
     $to      = $site_email;
@@ -50,7 +72,7 @@ function neo_handle_contact() {
     $body    = "Name: {$clean_name}\nEmail: {$email}\nCompany: {$company}\nMarket: {$market}\nStage: {$stage}\n\n{$message}";
     $headers = [
         'From: NeoTechnology Solutions <' . $site_email . '>',
-        'Reply-To: ' . $clean_name . ' <' . $email . '>',
+        'Reply-To: ' . $display . ' <' . $email . '>',
         'Content-Type: text/plain; charset=UTF-8',
     ];
 
