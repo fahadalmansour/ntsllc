@@ -1,40 +1,40 @@
 <?php
 defined('ABSPATH') || exit;
 
-const NEO_DB_VERSION = '2.0.0';
+const NTS_DB_VERSION           = '2.0.0';
+const NTS_CONTACT_RATE_WINDOW  = 60; // seconds between submissions per IP
 
-function neo_setup() {
+function nts_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('html5', ['search-form','comment-form','comment-list','gallery','caption']);
-    neo_maybe_upgrade_db();
+    load_theme_textdomain('neotechnology', get_template_directory() . '/languages');
+    nts_maybe_upgrade_db();
 }
-add_action('after_setup_theme', 'neo_setup');
+add_action('after_setup_theme', 'nts_setup');
 
-function neo_enqueue() {
-    wp_enqueue_style('neo-style', get_stylesheet_uri(), [], '1.0.0');
-    wp_enqueue_script('neo-main', get_template_directory_uri() . '/js/main.js', [], '1.0.0', true);
+function nts_enqueue() {
+    wp_enqueue_style('nts-style', get_stylesheet_uri(), [], '1.0.0');
+    wp_enqueue_script('nts-main', get_template_directory_uri() . '/js/main.js', [], '1.0.0', true);
 }
-add_action('wp_enqueue_scripts', 'neo_enqueue');
+add_action('wp_enqueue_scripts', 'nts_enqueue');
 
-function neo_register_menus() {
-    register_nav_menus(['primary' => 'Primary Navigation']);
+function nts_register_menus() {
+    register_nav_menus(['primary' => __('Primary Navigation', 'neotechnology')]);
 }
-add_action('init', 'neo_register_menus');
-
-const NEO_CONTACT_RATE_WINDOW = 60; // seconds between submissions per IP
+add_action('init', 'nts_register_menus');
 
 /* ── Contact form handler ── */
-function neo_handle_contact() {
-    $nonce = isset($_POST['neo_contact_nonce'])
-        ? sanitize_text_field(wp_unslash($_POST['neo_contact_nonce']))
+function nts_handle_contact() {
+    $nonce = isset($_POST['nts_contact_nonce'])
+        ? sanitize_text_field(wp_unslash($_POST['nts_contact_nonce']))
         : '';
-    if (!wp_verify_nonce($nonce, 'neo_contact')) {
+    if (!wp_verify_nonce($nonce, 'nts_contact')) {
         return;
     }
 
     // Honeypot: hidden field must be empty. Bots fill every input; humans never see it.
-    if (!empty($_POST['neo_hp_url'])) {
+    if (!empty($_POST['nts_hp_url'])) {
         wp_safe_redirect(home_url('/?sent=1'));
         exit;
     }
@@ -44,12 +44,12 @@ function neo_handle_contact() {
         ? substr(sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])), 0, 45)
         : '';
     if ($ip !== '') {
-        $rate_key = 'neo_contact_rl_' . md5($ip);
+        $rate_key = 'nts_contact_rl_' . md5($ip);
         if (get_transient($rate_key)) {
             wp_safe_redirect(home_url('/?sent=1'));
             exit;
         }
-        set_transient($rate_key, 1, NEO_CONTACT_RATE_WINDOW);
+        set_transient($rate_key, 1, NTS_CONTACT_RATE_WINDOW);
     }
 
     $name    = isset($_POST['name'])    ? sanitize_text_field(wp_unslash($_POST['name']))         : '';
@@ -66,12 +66,14 @@ function neo_handle_contact() {
     $clean_name = preg_replace('/[\r\n]+/', ' ', $name);
     $display    = '"' . str_replace(['"', '<', '>'], '', $clean_name) . '"';
     $site_email = get_option('admin_email');
+    $brand      = __('NeoTechnology Solutions', 'neotechnology');
 
     $to      = $site_email;
-    $subject = sprintf('New contact from %s — NeoTechnology Solutions', $clean_name);
+    /* translators: %s: visitor display name. */
+    $subject = sprintf(__('New contact from %s — NeoTechnology Solutions', 'neotechnology'), $clean_name);
     $body    = "Name: {$clean_name}\nEmail: {$email}\nCompany: {$company}\nMarket: {$market}\nStage: {$stage}\n\n{$message}";
     $headers = [
-        'From: NeoTechnology Solutions <' . $site_email . '>',
+        'From: ' . $brand . ' <' . $site_email . '>',
         'Reply-To: ' . $display . ' <' . $email . '>',
         'Content-Type: text/plain; charset=UTF-8',
     ];
@@ -79,7 +81,7 @@ function neo_handle_contact() {
     wp_mail($to, $subject, $body, $headers);
 
     global $wpdb;
-    $wpdb->insert(
+    $inserted = $wpdb->insert(
         $wpdb->prefix . 'nts_contacts',
         [
             'name'       => $clean_name,
@@ -88,9 +90,7 @@ function neo_handle_contact() {
             'market'     => $market,
             'stage'      => $stage,
             'message'    => $message,
-            'ip_address' => isset($_SERVER['REMOTE_ADDR'])
-                ? substr(sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])), 0, 45)
-                : '',
+            'ip_address' => $ip,
             'user_agent' => isset($_SERVER['HTTP_USER_AGENT'])
                 ? substr(sanitize_text_field(wp_unslash($_SERVER['HTTP_USER_AGENT'])), 0, 500)
                 : '',
@@ -99,20 +99,24 @@ function neo_handle_contact() {
         ['%s','%s','%s','%s','%s','%s','%s','%s','%s']
     );
 
+    if (false === $inserted) {
+        error_log('[neotechnology] nts_contacts insert failed: ' . $wpdb->last_error);
+    }
+
     $referer = wp_get_referer();
     $target  = $referer ? add_query_arg('sent', '1', $referer) : home_url('/');
     wp_safe_redirect($target);
     exit;
 }
-add_action('admin_post_nopriv_neo_contact', 'neo_handle_contact');
-add_action('admin_post_neo_contact',        'neo_handle_contact');
+add_action('admin_post_nopriv_nts_contact', 'nts_handle_contact');
+add_action('admin_post_nts_contact',        'nts_handle_contact');
 
 /**
  * Schema for {$wpdb->prefix}nts_contacts. Single source of truth.
  * Mirrors the columns/indexes in nts_schema.sql so the SQL file becomes
  * a documentation artifact, not a divergent runtime path.
  */
-function neo_install_schema() {
+function nts_install_schema() {
     global $wpdb;
 
     require_once ABSPATH . 'wp-admin/includes/upgrade.php';
@@ -142,12 +146,11 @@ function neo_install_schema() {
 }
 
 /**
- * Idempotent migration runner. Re-runs dbDelta whenever NEO_DB_VERSION bumps.
- * Replaces the old after_switch_theme hook so re-deploys upgrade the schema.
+ * Idempotent migration runner. Re-runs dbDelta whenever NTS_DB_VERSION bumps.
  */
-function neo_maybe_upgrade_db() {
-    if (get_option('nts_db_version') !== NEO_DB_VERSION) {
-        neo_install_schema();
-        update_option('nts_db_version', NEO_DB_VERSION);
+function nts_maybe_upgrade_db() {
+    if (get_option('nts_db_version') !== NTS_DB_VERSION) {
+        nts_install_schema();
+        update_option('nts_db_version', NTS_DB_VERSION);
     }
 }

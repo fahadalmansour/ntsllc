@@ -17,18 +17,18 @@
 <?php
 $home   = esc_url(home_url('/'));
 $is_front = is_front_page();
-function neo_anchor($anchor) {
+function nts_anchor($anchor) {
     global $is_front, $home;
     return $is_front ? '#' . $anchor : $home . '#' . $anchor;
 }
 ?>
     <ul class="nav-links">
-      <li><a href="<?= neo_anchor('services') ?>">Services</a></li>
-      <li><a href="<?= neo_anchor('process') ?>">Process</a></li>
-      <li><a href="<?= neo_anchor('pricing') ?>">Pricing</a></li>
-      <li><a href="<?= neo_anchor('about') ?>">About</a></li>
-      <li><a href="<?= neo_anchor('faq') ?>">FAQ</a></li>
-      <li><a href="<?= neo_anchor('contact') ?>" class="nav-cta">Get started</a></li>
+      <li><a href="<?= nts_anchor('services') ?>">Services</a></li>
+      <li><a href="<?= nts_anchor('process') ?>">Process</a></li>
+      <li><a href="<?= nts_anchor('pricing') ?>">Pricing</a></li>
+      <li><a href="<?= nts_anchor('about') ?>">About</a></li>
+      <li><a href="<?= nts_anchor('faq') ?>">FAQ</a></li>
+      <li><a href="<?= nts_anchor('contact') ?>" class="nav-cta">Get started</a></li>
     </ul>
     <a href="<?= esc_url(home_url('/ar/')) ?>" class="lang-toggle" aria-label="Arabic version">عر</a>
 
@@ -39,11 +39,11 @@ function neo_anchor($anchor) {
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
-  <a href="<?= neo_anchor('services') ?>">Services</a>
-  <a href="<?= neo_anchor('process') ?>">Process</a>
-  <a href="<?= neo_anchor('pricing') ?>">Pricing</a>
-  <a href="<?= neo_anchor('about') ?>">About</a>
-  <a href="<?= neo_anchor('faq') ?>">FAQ</a>
-  <a href="<?= neo_anchor('contact') ?>">Get started →</a>
+  <a href="<?= nts_anchor('services') ?>">Services</a>
+  <a href="<?= nts_anchor('process') ?>">Process</a>
+  <a href="<?= nts_anchor('pricing') ?>">Pricing</a>
+  <a href="<?= nts_anchor('about') ?>">About</a>
+  <a href="<?= nts_anchor('faq') ?>">FAQ</a>
+  <a href="<?= nts_anchor('contact') ?>">Get started →</a>
   <a href="<?= esc_url(home_url('/ar/')) ?>" class="lang-toggle">عر</a>
 </div>
