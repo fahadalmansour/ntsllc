@@ -9,7 +9,7 @@ $home_url  = esc_url(home_url('/'));
 $ar_url    = esc_url(home_url('/ar/'));
 ?>
 <!DOCTYPE html>
-<html dir="rtl" lang="ar" <?php language_attributes(); ?>>
+<html dir="rtl" lang="ar">
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -120,9 +120,10 @@ $ar_url    = esc_url(home_url('/ar/'));
 </head>
 <body <?php body_class('rtl'); ?>>
 <?php wp_body_open(); ?>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('انتقل إلى المحتوى', 'neotechnology'); ?></a>
 
 <!-- ── NAV ──────────────────────────────────────────────────────────────── -->
-<nav class="site-nav" id="site-nav">
+<nav class="site-nav" id="site-nav" role="banner">
   <div class="nav-inner">
     <a href="<?= $ar_url ?>" class="nav-logo">نيو<span>تكنولوجي</span></a>
 
@@ -151,6 +152,8 @@ $ar_url    = esc_url(home_url('/ar/'));
   <a href="<?= $home_url ?>">English</a>
   <a href="#contact">ابدأ الآن ←</a>
 </div>
+
+<main id="content" role="main">
 
 <!-- ══ HERO ═══════════════════════════════════════════════════════════════ -->
 <section class="hero" id="hero">
@@ -728,6 +731,8 @@ $ar_url    = esc_url(home_url('/ar/'));
     </div>
   </div>
 </section>
+
+</main><!-- #content -->
 
 <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
 <footer class="site-footer">

@@ -7,8 +7,9 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'neotechnology'); ?></a>
 
-<nav class="site-nav" id="site-nav">
+<nav class="site-nav" id="site-nav" role="banner">
   <div class="nav-inner">
     <a href="<?= esc_url(home_url('/')) ?>" class="nav-logo">
       Neo<span>Technology</span>

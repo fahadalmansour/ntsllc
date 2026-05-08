@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<main id="content" role="main">
+
 <!-- ══ HERO ═══════════════════════════════════════════════════════════════ -->
 <section class="hero" id="hero">
   <div class="container">
@@ -578,5 +580,7 @@
     </div>
   </div>
 </section>
+
+</main><!-- #content -->
 
 <?php get_footer(); ?>
