@@ -1,0 +1,30 @@
+# =============================================================================
+# NTS hardening rules — paste at the TOP of ~/neotechnology.solutions/.htaccess
+# (above the `# BEGIN LSCACHE` marker, which the LSCache plugin owns; and far
+#  above `# BEGIN WordPress`, which WP rewrites on permalink saves).
+#
+# Closes audit HIGH `xmlrpc.php reachable` and HIGH `?author=N enumeration`
+# in ~/.claude/reports/ntsllc/readiness-2026-05-08.md.
+#
+# Always back up first:
+#   cp ~/neotechnology.solutions/.htaccess ~/neotechnology.solutions/.htaccess.bak-$(date +%s)
+# =============================================================================
+
+# BEGIN NTS_HARDENING
+# xmlrpc — not used. Block before WP gets the request.
+<Files "xmlrpc.php">
+  Require all denied
+</Files>
+
+# Block ?author=N enumeration before WP redirects to /author/<slug>/
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{QUERY_STRING} (^|&)author=\d
+  RewriteRule ^ - [F]
+</IfModule>
+
+# Block direct access to .git, .env, .env.local, etc.
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.env
+RedirectMatch 404 /(README|readme|CHANGELOG|changelog|composer\.json|composer\.lock|package\.json|package-lock\.json|yarn\.lock)
+# END NTS_HARDENING
