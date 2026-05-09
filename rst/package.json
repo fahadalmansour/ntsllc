@@ -121,13 +121,13 @@
     "@google/generative-ai": "^0.24.1",
     "stripe": "^22.1.0",
     "@jsr/supabase__supabase-js@2.49.8": "npm:@jsr/supabase__supabase-js@2.49.8",
-    "hono": "^4.12.17"
+    "hono": "^4.12.18"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
     "@vitejs/plugin-react": "4.7.0",
     "tailwindcss": "4.1.12",
-    "vite": "6.3.5"
+    "vite": "6.4.2"
   },
   "peerDependencies": {
     "react": "18.3.1",
@@ -143,7 +143,7 @@
   },
   "pnpm": {
     "overrides": {
-      "vite": "6.3.5"
+      "vite": "6.4.2"
     }
   },
   "readme": "ERROR: No README data found!",
